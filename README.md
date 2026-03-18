@@ -53,6 +53,20 @@ In Cursor (or similar), you can reference this repo by URL in the prompt, for ex
 
 ---
 
+## Publish to GitHub
+
+1. Create a **new repository** on GitHub (e.g. `cakezerofloor5`). Do not add a README, .gitignore, or license — this repo already has them.
+2. Add the remote and push:
+
+   ```bash
+   git remote add origin https://github.com/YOUR_ORG/cakezerofloor5.git
+   git push -u origin main
+   ```
+
+   Replace `YOUR_ORG` with your GitHub org or username.
+
+---
+
 ## License
 
 Add your license file and notice here (e.g. MIT, proprietary).
