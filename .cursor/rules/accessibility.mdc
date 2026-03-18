@@ -1,0 +1,294 @@
+---
+description: Accessibility rules for the Agentic Design System — WCAG 2.2 AA, ARIA APG, keyboard/screen reader, and agentic-specific behavior. Apply when generating or editing UI.
+globs:
+alwaysApply: true
+# Accessibility policy config (use when implementing components)
+reducedMotion: noScale
+focusTrapModals: true
+focusRingMinWidth: 2
+---
+
+# Accessibility Policy — Agentic Design System
+
+This document defines accessibility rules for the design system. It is written for frontend engineers and designers building AI-powered interfaces. The agent uses these rules when generating UI to ensure WCAG 2.2 alignment, ARIA APG patterns, keyboard and screen reader compatibility, and agentic-specific behavior.
+
+---
+
+## 1. Why Agentic Accessibility Is Different
+
+Standard WCAG and ARIA guidance assume **user-triggered**, **deterministic** interactions. In agentic interfaces, content and state often change without a direct user action: AI generates or streams text, background tasks run, and the agent performs actions on the user's behalf. This section reframes accessibility for that reality.
+
+### 1.1 POUR Principles Reframed for AI Interfaces
+
+| Principle | Traditional | Agentic reframe |
+|-----------|-------------|------------------|
+| **Perceivable** | Information and UI are presentable to users in ways they can perceive. | **AI-generated and streamed content** must be exposed to assistive tech as it appears. Streaming text, status updates, and non-deterministic output need live regions, incremental announcements, or structured updates so users perceive what the system is doing. |
+| **Operable** | UI components and navigation are operable. | **Long-running and background tasks** must not block or trap the user. Provide **interrupt** and **cancel** where appropriate. Focus and tab order must remain predictable even when content updates. Avoid keyboard traps except in controlled contexts (e.g. modals). |
+| **Understandable** | Information and operation of the UI are understandable. | **Agent actions** must be clearly described: what the agent did, is doing, or will do. Use plain language and consistent patterns. **Non-deterministic outcomes** should be explained (e.g. "Searching…", "Found 3 results", "No matches"). |
+| **Robust** | Content is robust enough for assistive technologies. | **Dynamic and streamed content** must use correct semantics and ARIA so screen readers and other AT can parse and announce it. Mark up structure (headings, lists, regions) even when content is generated or updated asynchronously. |
+
+### 1.2 Five Agentic-Specific Principles
+
+1. **Transparency** — The user must always know what the system is doing. Announce agent activity (e.g. "Agent is searching"), progress (e.g. "Step 2 of 4"), and results. Use `aria-live` and clear labels; avoid silent background changes that only sighted users would notice.
+
+2. **Interruptibility** — Long-running or multi-step agent tasks should be interruptible where safe. Provide "Cancel" or "Stop" that is keyboard accessible and clearly labeled. Do not force users to wait without feedback or control.
+
+3. **Predictability** — UI changes triggered by the agent (new content, modals, focus shifts) must be predictable. Avoid surprising focus moves or unexpected dialogs. When focus must move (e.g. into a new modal), announce the context change.
+
+4. **Recoverability** — Destructive or irreversible agent actions require explicit user confirmation (see destructive actions below). Errors and failures must be communicated accessibly and offer a way to retry or recover.
+
+5. **Cognitive load** — Reduce ambiguity. Use consistent patterns for "agent is working," "agent finished," and "agent needs input." Avoid overwhelming users with too many live announcements; prioritize the most important status (e.g. one primary `aria-live` region for current operation).
+
+---
+
+## 2. Standards Reference
+
+- **WCAG 2.2 Level AA** — Required. All content and UI must meet Level AA success criteria.
+- **ARIA Authoring Practices Guide (APG)** — Required. Use APG patterns for custom components (dialogs, buttons, feeds, etc.).
+- **Section 508** — Where applicable (federal or contractual), align with Revised Section 508 (WCAG 2.0 Level AA as the baseline; WCAG 2.2 AA satisfies and extends this).
+- **WCAG 2.2 Level AAA** — Note criteria worth pursuing where feasible (e.g. 2.4.8 Location, 2.4.9 Link Purpose, 3.2.5 Change on Request). Not required for baseline compliance.
+
+---
+
+## 3. Global Rules
+
+### 3.1 Color and Contrast (WCAG 2.2)
+
+- Text on background: **≥ 4.5:1** for normal text, **≥ 3:1** for large text (18pt+ or 14pt+ bold).
+- Use design token colors that are verified for contrast (e.g. `color.text` on `color.surface`, `color.primary` on white for buttons).
+- Destructive actions must use a color that meets contrast on the background (e.g. `color.destructive`).
+- **AAA note:** Aim for **≥ 7:1** for normal text where design allows.
+
+### 3.2 Screen Reader Compatibility
+
+- Every interactive element must have an **accessible name**: visible label or `aria-label` (or `aria-labelledby` where appropriate).
+- Icon-only buttons must have `aria-label` describing the action.
+- Modals must be announced when opened: use `role="dialog"`, `aria-modal="true"`, and `aria-labelledby` / `aria-describedby` so the title and description are read.
+- For **dynamic/streaming content**, use `aria-live` regions with an appropriate politeness (`polite` default, `assertive` only for urgent interruptions). Ensure live regions have a consistent, predictable structure.
+
+### 3.3 Keyboard Navigation
+
+- All interactive elements must be **focusable** (in tab order) and **activatable** with Enter and Space where appropriate.
+- Focus order must follow a logical sequence (e.g. top to bottom, left to right).
+- **No keyboard traps** except inside modals; see Modal focus trap below. When `focusTrapModals: true`, implement focus trap in all modals.
+- **Escape** should dismiss overlays, cancel in-progress flows, or close modals and return focus.
+- Use a visible focus ring with minimum width per config (`focusRingMinWidth: 2` → 2px) via `:focus-visible`.
+
+### 3.4 Motion and Animation
+
+- Respect **prefers-reduced-motion**. When `prefers-reduced-motion: reduce` is set, apply the configured behavior (`reducedMotion: noScale`): disable or significantly reduce non-essential motion (e.g. loading spinners can remain; avoid decorative animations that could cause discomfort). Do not scale motion in a way that disorients users.
+- Do not rely on motion alone to convey meaning; provide text or icons as well.
+
+### 3.5 Destructive Actions and Confirmation
+
+- **Destructive actions** (e.g. Delete, Remove, irreversible reset) must **not** execute immediately from a single button click.
+- The agent must generate a **confirmation modal** when the intent is destructive: the user must explicitly confirm (e.g. "Delete" / "Cancel") before the action runs.
+- The modal must include a clear **title** and **description** (e.g. "Delete device?" and "This action cannot be undone.").
+
+---
+
+## 4. Component Guidelines
+
+For each component: semantic HTML/ARIA, keyboard behavior, screen reader expectations, motion notes, and ✅ Do / ❌ Don't examples.
+
+---
+
+### 4.1 Button
+
+**Semantic HTML/ARIA**
+
+- Use `<button type="button">` (or `type="submit"` in forms). Do not use `<div>` or `<span>` with click handlers for actions.
+- Provide an accessible name: visible text or `aria-label` for icon-only buttons.
+- For loading state: `aria-busy="true"` and optionally `aria-label` that includes the action and "loading" (e.g. "Save, loading").
+
+**Keyboard**
+
+- Focusable by default; activatable with **Enter** and **Space**.
+- Focus order follows layout; visible focus ring (min 2px per policy config) using `:focus-visible`.
+
+**Screen reader**
+
+- Announce the button's label and state (e.g. "Save", "Delete, loading"). For destructive buttons in a confirmation flow, ensure the modal (not just the button) explains the consequence.
+
+**Motion**
+
+- If a loading spinner is used, respect `prefers-reduced-motion` (e.g. static "Loading" text when reduced motion is preferred).
+
+**Examples**
+
+- ✅ **Do:** `<button type="button" class="btn btn-primary" aria-label="Save">Save</button>`
+- ✅ **Do:** `<button type="button" aria-label="Delete device" class="btn btn-destructive">Delete</button>` (then open confirmation modal)
+- ❌ **Don't:** `<div role="button" tabindex="0" @click="save">Save</div>` — use `<button>`
+- ❌ **Don't:** Icon-only button without `aria-label`: `<button><Icon name="trash" /></button>`
+
+---
+
+### 4.2 Modal (Dialog)
+
+**Semantic HTML/ARIA**
+
+- Use `role="dialog"` (or native `<dialog>` with correct support), `aria-modal="true"`, `aria-labelledby` pointing to the title, `aria-describedby` pointing to the body when present.
+- Optional: `aria-labelledby` and `aria-describedby` on the dialog container so the first thing read is the title and description.
+
+**Keyboard**
+
+- **Focus trap:** When `focusTrapModals: true`, when the modal opens, move focus to the first focusable element inside the dialog (or the dialog container if no focusable element). **Tab** and **Shift+Tab** must cycle only through focusable elements **inside** the modal; focus must not leave until the modal is closed.
+- **Escape** closes the modal and returns focus to the element that opened it (e.g. the "Delete" button).
+- On close (Escape, Cancel, or Confirm), return focus to the trigger element.
+
+**Screen reader**
+
+- On open, the dialog is announced; title and description are read (via `aria-labelledby` / `aria-describedby`). User understands that context has changed to the dialog.
+
+**Motion**
+
+- If the modal uses an entrance animation, respect `prefers-reduced-motion` (e.g. skip or shorten animation).
+
+**Examples**
+
+- ✅ **Do:** Focus trap so Tab never leaves the dialog; on close, focus returns to trigger.
+- ✅ **Do:** `<div role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-desc">` with visible title and description.
+- ❌ **Don't:** Allow Tab to move focus to the page behind the modal.
+- ❌ **Don't:** Close the modal without restoring focus to the trigger.
+
+---
+
+### 4.3 Table
+
+**Semantic HTML/ARIA**
+
+- Use `<table>`, `<thead>`, `<tbody>`, `<th>`, `<td>`. Use `scope="col"` on column headers; `scope="row"` on row headers if applicable.
+- Optional `<caption>` or `aria-label` on the table for context.
+- Ensure every cell is associated with its headers (implicit with correct scope, or `headers` attribute when needed).
+
+**Keyboard**
+
+- All action buttons in the table (e.g. Edit, Delete) must be focusable and activatable with Enter/Space. Tab order: left to right, row by row.
+
+**Screen reader**
+
+- Column headers are announced with cell content. Caption or table label provides context. Row actions (e.g. "Edit", "Delete") have clear accessible names.
+
+**Motion**
+
+- No specific motion requirements; follow global reduced-motion rule for any row animations.
+
+**Examples**
+
+- ✅ **Do:** `<th scope="col">Name</th>` and semantic `<table>` structure.
+- ✅ **Do:** Per-row actions: `<button aria-label="Edit device">Edit</button>`, `<button aria-label="Delete device">Delete</button>` (Delete opens confirmation modal).
+- ❌ **Don't:** Use `<div>` with grid layout for tabular data instead of `<table>`.
+- ❌ **Don't:** Omit scope or headers so screen readers cannot associate cells with headers.
+
+---
+
+### 4.4 Agentic-Specific: Streaming / Progressively Revealed Content
+
+**Semantic HTML/ARIA**
+
+- Use an `aria-live` region (e.g. `aria-live="polite"`) for the container that receives streamed or progressively revealed text.
+- Use `aria-busy="true"` while content is streaming; set to `false` when complete.
+- Prefer **polite** so announcements do not interrupt the user; use **assertive** only for critical interruptions (e.g. "Error: connection lost").
+
+**Keyboard**
+
+- Do not steal focus as content streams. If the user is typing or focused in an input, keep focus there unless the design explicitly moves focus (e.g. to an error message).
+
+**Screen reader**
+
+- Streamed content should be announced as it appears (live region). Avoid announcing every character; batching or announcing by sentence/phrase reduces cognitive load. When streaming completes, ensure the final state is announced (e.g. "Response complete").
+
+**Motion**
+
+- If a "typing" or cursor animation is used, respect `prefers-reduced-motion`.
+
+**Examples**
+
+- ✅ **Do:** `<div aria-live="polite" aria-busy="true" aria-atomic="false">` for streaming text; set `aria-busy="false"` when done.
+- ✅ **Do:** Optionally use `aria-atomic="true"` only when the entire message should be re-read on update (e.g. short status), not for long streaming text.
+- ❌ **Don't:** Use `aria-live="assertive"` for normal streaming output.
+- ❌ **Don't:** Change focus automatically as each token or line streams in.
+
+---
+
+### 4.5 Agentic-Specific: Long-Running Tasks and Progress
+
+**Semantic HTML/ARIA**
+
+- Use `role="progressbar"` with `aria-valuenow`, `aria-valuemin`, `aria-valuemax` when progress is determinate.
+- For indeterminate progress: `role="status"` and `aria-live="polite"` with a label like "Loading…" or "Processing…".
+- Provide a way to **cancel** or **stop** when safe: a button with an accessible name (e.g. "Cancel", "Stop") that is focusable and activatable by keyboard.
+
+**Keyboard**
+
+- Cancel/Stop must be in tab order and activatable with Enter/Space. Focus should not be trapped on the progress indicator; user can tab to Cancel.
+
+**Screen reader**
+
+- Progress is announced (e.g. "Progress 50%" or "Loading…"). When complete or cancelled, announce the result (e.g. "Complete", "Cancelled").
+
+**Motion**
+
+- Spinner or progress animation: respect `prefers-reduced-motion` (e.g. static "Loading" or minimal motion).
+
+**Examples**
+
+- ✅ **Do:** `<div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress">`
+- ✅ **Do:** Indeterminate: `<div role="status" aria-live="polite" aria-label="Agent is searching">` plus a "Cancel" button.
+- ❌ **Don't:** Run a long task with no progress or cancel option and no status announcement.
+- ❌ **Don't:** Use only a visual spinner with no `role="status"` or `aria-live` so screen readers get no feedback.
+
+---
+
+### 4.6 Agentic-Specific: Agent Actions and Status
+
+**Semantic HTML/ARIA**
+
+- Use a dedicated **status** or **log** region with `aria-live="polite"` (or `role="status"`) for agent activity (e.g. "Agent is searching", "Agent found 3 results", "Agent is updating the document").
+- Use clear, concise language. Avoid jargon; prefer "Searching…" over "Running query."
+- When the agent performs an action on the user's behalf, announce what was done (e.g. "Device deleted" or "Settings saved") in the same live region or via a toast that is accessible.
+
+**Keyboard**
+
+- Status text is typically not focusable; ensure critical follow-up actions (e.g. "Retry", "Undo") are focusable and in tab order.
+
+**Screen reader**
+
+- One primary live region for current agent status reduces confusion. Update the same region rather than creating many competing live regions.
+
+**Motion**
+
+- Follow global motion rules for any status animations.
+
+**Examples**
+
+- ✅ **Do:** Single live region: "Agent is searching." → "Found 3 results." → "Displaying results."
+- ✅ **Do:** After agent action: "Device deleted. You can undo this in the next 5 seconds." with an accessible "Undo" button.
+- ❌ **Don't:** Silently update the page (e.g. delete a row) with no announcement.
+- ❌ **Don't:** Use multiple assertive live regions that interrupt each other.
+
+---
+
+## 5. Modal Focus Trap (Summary)
+
+- When a modal is open, focus moves to the first focusable element inside the dialog (or the dialog container if nothing is focusable).
+- Tab and Shift+Tab cycle only through focusable elements **inside** the modal.
+- When the modal is closed (Escape, Cancel, or Confirm), focus returns to the element that opened the modal.
+- This ensures keyboard users are not lost and screen reader users understand that the context has changed to the dialog.
+
+---
+
+## 6. Quick Reference for the Agent
+
+When generating UI, the agent must:
+
+- Use semantic HTML and ARIA per component guidelines (button, modal, table, streaming, progress, status).
+- Ensure every interactive element has an accessible name and is keyboard operable.
+- Apply modal focus trap for dialogs and restore focus on close (`focusTrapModals: true`).
+- Use focus ring minimum width per config (`focusRingMinWidth: 2`).
+- For destructive intent: generate a confirmation modal with title, description, and explicit Confirm/Cancel before executing.
+- For streaming or long-running agent activity: expose status via `aria-live` / `role="status"` and provide cancel where appropriate.
+- Respect `prefers-reduced-motion` per `reducedMotion: noScale` for non-essential motion.
+- Use design token colors that meet WCAG 2.2 AA contrast.
+
+Refer to component docs (`components/button.md`, `components/confirmation-modal.md`, `components/basic-modal.md`, `components/table.md`) for layout, variants, and token usage; this policy defines the accessibility requirements those components must satisfy.

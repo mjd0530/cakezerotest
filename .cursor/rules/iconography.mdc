@@ -1,0 +1,52 @@
+---
+description: Iconography rules for the Agentic Design System. Only Material Design icons are allowed. Apply when generating or editing UI that uses icons.
+globs:
+alwaysApply: true
+---
+
+# Iconography Policy — Agentic Design System
+
+Use this rule when generating or editing UI that includes icons. It ensures a single, consistent icon system across the product.
+
+---
+
+## 1. Allowed icon source
+
+- **Only Material Design icons** are permitted.
+- Use [Material Symbols](https://fonts.google.com/icons) (Google Fonts) or the [Material Design Icons](https://materialdesignicons.com/) set.
+- Do **not** use Font Awesome, Heroicons, Phosphor, Lucide, or any other icon library. Do not introduce custom or third-party icon sets.
+
+---
+
+## 2. Naming and style
+
+- Refer to icons by their **Material name** (e.g. `add`, `close`, `delete`, `edit`, `settings`, `search`, `arrow_back`, `check_circle`).
+- Prefer **outlined** or **rounded** style by default unless the design specifies filled.
+- Default size **24dp** for UI; 20dp for compact contexts; 18dp only when necessary.
+
+---
+
+## 3. Implementation
+
+- When generating code, use Material Symbols (e.g. via Google Fonts) or an official Material Icons package. Ensure SVG or icon components come from the Material Design Icons set only.
+- If no exact Material icon exists for a concept, choose the closest semantic match from the Material set; do not substitute another library.
+
+---
+
+## 4. Accessibility
+
+- Icon-only buttons must have an **accessible name** (`aria-label`). See accessibility policy for full requirements.
+- Decorative icons that duplicate adjacent text must use `aria-hidden="true"`.
+
+---
+
+## 5. Quick reference for the agent
+
+When generating UI:
+
+- **Use only Material Design icons.** No other icon systems.
+- Use official Material names and consistent style (outlined/rounded).
+- Default size 24dp; 20dp/18dp only when layout requires it.
+- Give every interactive icon an accessible name; use `aria-hidden` for redundant decorative icons.
+
+Full policy: `design-system/policies/iconography.md`.

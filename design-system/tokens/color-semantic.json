@@ -1,0 +1,150 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "description": "Semantic color tokens for AI and code. All values reference design-system/tokens/color-primitives.json only. Use these tokens in UI so theming and contrast stay consistent.",
+  "semantic": {
+    "primary": {
+      "default": {
+        "value": "{primitive.blue.600}",
+        "type": "color",
+        "description": "Main brand/primary actions: primary buttons, links, selected states, focus rings. Use for one primary action per context."
+      },
+      "hover": {
+        "value": "{primitive.blue.700}",
+        "type": "color",
+        "description": "Hover state for primary buttons and primary-styled links."
+      },
+      "muted": {
+        "value": "{primitive.blue.100}",
+        "type": "color",
+        "description": "Light primary tint: subtle backgrounds, badges, or highlights. Pair text with primitive.blue.800 or blue.900 for ≥4.5:1."
+      },
+      "onPrimary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text and icons on primary fill (e.g. button label). Contrast: white on blue.600 exceeds 4.5:1."
+      }
+    },
+    "secondary": {
+      "default": {
+        "value": "{primitive.slate.600}",
+        "type": "color",
+        "description": "Secondary actions: secondary buttons, secondary links, less emphasis than primary. Use for alternative actions."
+      },
+      "hover": {
+        "value": "{primitive.slate.700}",
+        "type": "color",
+        "description": "Hover state for secondary buttons and secondary-styled links."
+      },
+      "muted": {
+        "value": "{primitive.slate.100}",
+        "type": "color",
+        "description": "Light secondary tint: neutral backgrounds and borders. Pair text with slate.700+ for ≥4.5:1."
+      },
+      "onSecondary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text and icons on secondary fill. Contrast: white on slate.600 exceeds 4.5:1."
+      }
+    },
+    "background": {
+      "canvas": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Page/app root background. Prefer in light mode; pair with text.primary and text.secondary."
+      },
+      "surface": {
+        "value": "{primitive.gray.50}",
+        "type": "color",
+        "description": "Cards, panels, raised surfaces. Slight contrast with canvas. Text on surface: use text.primary (≥4.5:1)."
+      },
+      "surfaceElevated": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Modals, dropdowns, popovers. Use with border from primitive.gray.200 for 3:1 UI element contrast."
+      },
+      "subtle": {
+        "value": "{primitive.gray.100}",
+        "type": "color",
+        "description": "Subtle sections, disabled backgrounds. Pair text with gray.700+ for ≥4.5:1."
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{primitive.gray.900}",
+        "type": "color",
+        "description": "Body and headings on light backgrounds. Contrast: gray.900 on white ≥7:1 (WCAG AA). Use for main content."
+      },
+      "secondary": {
+        "value": "{primitive.gray.600}",
+        "type": "color",
+        "description": "Supporting text, captions, labels. Contrast: gray.600 on white ≥4.5:1. Do not use for long paragraphs."
+      },
+      "muted": {
+        "value": "{primitive.gray.500}",
+        "type": "color",
+        "description": "Placeholders, hints, disabled text. Contrast: gray.500 on white ~4.5:1; prefer on large text or non-critical UI."
+      },
+      "inverse": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text on dark backgrounds (e.g. primary button, dark header). Ensure background is dark enough for ≥4.5:1."
+      }
+    },
+    "success": {
+      "default": {
+        "value": "{primitive.green.600}",
+        "type": "color",
+        "description": "Success states: confirmations, success messages, positive indicators. Contrast: green.600 on white ≥4.5:1."
+      },
+      "muted": {
+        "value": "{primitive.green.100}",
+        "type": "color",
+        "description": "Success backgrounds, success badges. Pair text with green.800 or green.900 for ≥4.5:1."
+      },
+      "onSuccess": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text/icons on success fill (e.g. success button). White on green.600 exceeds 4.5:1."
+      }
+    },
+    "warning": {
+      "default": {
+        "value": "{primitive.amber.600}",
+        "type": "color",
+        "description": "Warnings: caution messages, non-destructive alerts. Contrast: amber.600 on white ≥4.5:1 for normal text."
+      },
+      "muted": {
+        "value": "{primitive.amber.100}",
+        "type": "color",
+        "description": "Warning backgrounds, warning badges. Pair text with amber.800 or amber.900 for ≥4.5:1."
+      },
+      "onWarning": {
+        "value": "{primitive.amber.900}",
+        "type": "color",
+        "description": "Text/icons on warning fill. amber.900 on amber.600 meets 4.5:1; use for button labels on warning buttons."
+      }
+    },
+    "danger": {
+      "default": {
+        "value": "{primitive.red.600}",
+        "type": "color",
+        "description": "Destructive actions, errors, critical alerts. Contrast: red.600 on white ≥4.5:1. Use for delete/remove and error text."
+      },
+      "hover": {
+        "value": "{primitive.red.700}",
+        "type": "color",
+        "description": "Hover state for danger buttons and destructive links."
+      },
+      "muted": {
+        "value": "{primitive.red.100}",
+        "type": "color",
+        "description": "Error backgrounds, error badges. Pair text with red.800 or red.900 for ≥4.5:1."
+      },
+      "onDanger": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text and icons on danger fill (e.g. delete button). White on red.600 exceeds 4.5:1."
+      }
+    }
+  }
+}
