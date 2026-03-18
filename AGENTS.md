@@ -1,4 +1,4 @@
-# Agent instructions — Cake&test
+# Agent instructions — Cakezerotest
 
 Mandatory rules for any AI agent generating or editing UI in this codebase.
 

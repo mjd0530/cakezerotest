@@ -1,4 +1,4 @@
-# Cake&test — Design system (AI-ready)
+# Cakezerotest — Design system (AI-ready)
 
 Design-system repository: tokens, component specs, policies, intents, and page patterns. No app code — this repo is the **source of truth** for generating or validating UI. Intended for use by **development teams and AI coding tools** (e.g. Cursor, Copilot, Codex) when building interfaces.
 
@@ -24,13 +24,13 @@ Design-system repository: tokens, component specs, policies, intents, and page p
 
 1. Clone the repo and open the folder in Cursor.
 2. Cursor will pick up `.cursor/rules/*.mdc` and `AGENTS.md` for the workspace.
-3. When building UI in **another** app repo, add this repo as a **reference**: open both folders in the same workspace, or use Cursor’s “Add folder to workspace” and point to the cloned path. Then instruct the AI to follow the design system in `Cake&test` (e.g. “Use the design system in `Cake&test` — read AGENTS.md first”).
+3. When building UI in **another** app repo, add this repo as a **reference**: open both folders in the same workspace, or use Cursor’s “Add folder to workspace” and point to the cloned path. Then instruct the AI to follow the design system in cakezerotest (e.g. “Use the design system in cakezerotest — read AGENTS.md first”).
 
 ### Option 2: Point AI at the repo URL
 
 In Cursor (or similar), you can reference this repo by URL in the prompt, for example:
 
-- “Follow the design system at **https://github.com/YOUR_ORG/Cake-and-test** — read `AGENTS.md` and the document index before generating UI.”
+- “Follow the design system at **https://github.com/mjd0530/cakezerotest** — read `AGENTS.md` and the document index before generating UI.”
 - For Cursor: add the repo as a **linked folder** or **@-reference** if your setup supports it, so the model can read files from it.
 
 ### Option 3: Copy rules into your app repo
@@ -55,15 +55,14 @@ In Cursor (or similar), you can reference this repo by URL in the prompt, for ex
 
 ## Publish to GitHub
 
-1. Create a **new repository** on GitHub (e.g. `Cake-and-test`, since GitHub repo names work best without `&`). Do not add a README, .gitignore, or license — this repo already has them.
-2. Add the remote and push:
+This repo lives at **https://github.com/mjd0530/cakezerotest**. To clone or add as remote:
 
-   ```bash
-   git remote add origin https://github.com/YOUR_ORG/Cake-and-test.git
-   git push -u origin main
-   ```
-
-   Replace `YOUR_ORG` with your GitHub org or username.
+```bash
+git clone https://github.com/mjd0530/cakezerotest.git
+# or add remote to an existing repo:
+git remote add origin https://github.com/mjd0530/cakezerotest.git
+git push -u origin main
+```
 
 ---
 
