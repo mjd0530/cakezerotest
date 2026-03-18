@@ -1,0 +1,37 @@
+---
+description: Tokens must map to the correct CSS property. Typography (font-size, line-height, font-family) are separate from color; Tailwind text-* sets color. Apply when generating or editing UI that uses design tokens.
+globs:
+alwaysApply: true
+---
+
+# Tokens and CSS properties — Agentic Design System
+
+When turning component specs into code, every spec property must map to the **correct CSS property**. Using a token with a utility or class that sets a different property is a bug.
+
+**When to read:** Generating or editing UI that uses design tokens. Full policy: `design-system/policies/tokens-and-css.md`.
+
+---
+
+## 1. Principle
+
+Every spec property (background, color, font-size, line-height, font-family, padding, border, etc.) must be implemented by code that sets that **exact** CSS property. No hardcoded values; no token applied via a utility that targets a different property.
+
+---
+
+## 2. Typography pitfall (Tailwind)
+
+In Tailwind, `text-*` utilities set **color**, not font-size. Do not use `text-[var(--font-size-sm)]` for label size — that sets color.
+
+Use instead: custom classes that set `font-size` and `line-height` with tokens; theme-extended `fontSize`/`lineHeight` utilities; or inline style with the token.
+
+---
+
+## 3. Colors
+
+Use semantic tokens only (e.g. `--color-primary`, `--color-secondary-muted-hover`). Never hardcode hex or rgba. If a state has no token, add one to the theme and reference it.
+
+---
+
+## 4. Before finishing a component
+
+For each visual property in the spec, confirm the code sets that **exact** property. No hardcoded values; no token on a utility that targets a different property.

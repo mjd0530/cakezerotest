@@ -116,6 +116,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/policies/typography.md` | Any text styling |
 
+| `design-system/policies/tokens-and-css.md` | When implementing component specs; mapping tokens to CSS properties |
+
 ### Cursor rules
 
 | File | When to read |
@@ -125,6 +127,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 | `.cursor/rules/accessibility.mdc` | Generating or editing any interactive UI |
 
 | `.cursor/rules/iconography.mdc` | Using any icon |
+
+| `.cursor/rules/tokens-css.mdc` | Generating or editing UI that uses design tokens |
 
 ### Intents
 
@@ -192,9 +196,11 @@ Execute these steps in order. Do not skip.
 
    - Spacing / radius / z-index / breakpoints → read from the relevant component or page doc.
 
-5. **Check the gap rule** for anything not found (see §4).
+5. **When implementing components**, ensure each spec property maps to the correct CSS property; read `design-system/policies/tokens-and-css.md` when turning specs into code.
 
-6. **Write the UI** using only documented components and resolved token values.
+6. **Check the gap rule** for anything not found (see §4).
+
+7. **Write the UI** using only documented components and resolved token values.
 
 ---
 
@@ -227,6 +233,10 @@ These apply to every line of UI code. Check output against this list before fini
 - [ ] No hardcoded colors. All color values come from semantic tokens.
 
 - [ ] No hardcoded font sizes, weights, families, or line-heights. All from `typography.json`.
+
+- [ ] Each spec property is applied via the **correct** CSS property (e.g. font-size token sets `font-size`, not `color`).
+
+- [ ] No token used with a utility that sets a different property (e.g. do not use `text-[var(--font-size-sm)]` for size; Tailwind `text-*` sets color).
 
 - [ ] No magic-number spacing, radius, or z-index. All from documented scales.
 
