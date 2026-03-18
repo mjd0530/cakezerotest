@@ -61,6 +61,7 @@ All variants support the same size scale. Values use design-system tokens.
 
 | Size | Height | Horizontal padding | Label typography | Line-height |
 |------|--------|---------------------|------------------|-------------|
+| **Small** | 1.5rem (24px) | `var(--text-xs)` (0.75rem) | `var(--text-xs)`, `font-weight: 600` | tight |
 | **Medium** | 2rem (32px) | `var(--text-sm)` (0.875rem) | `var(--text-sm)`, `font-weight: 600` | tight |
 | **Large** | 2.5rem (40px) | `var(--text-base)` (1rem) | `var(--text-base)`, `font-weight: 600` | snug |
 
@@ -145,7 +146,7 @@ Map to your CSS variables or theme. Values come from `color-semantic.json` and `
   border-radius: 9999px;
   padding: 0.75rem var(--space-lg);
   font-weight: 600;
-  font-size: var(--text-base); /* large */ or var(--text-sm); /* medium */
+  font-size: var(--text-base); /* large */ or var(--text-sm); /* medium */ or var(--text-xs); /* small */
   cursor: pointer;
 }
 .ds-btn--primary:hover:not(:disabled):not([data-loading="true"]) {
@@ -191,7 +192,7 @@ Map to your CSS variables or theme. Values come from `color-semantic.json` and `
 | Disabled | `--color-bg-subtle` | `--color-text-muted` | none | not-allowed | pointer-events: none |
 | Loading | `--color-bg-subtle` | `--color-text-muted` | none | not-allowed | Trailing spinner |
 
-**Padding (Secondary)**: Vertical from size (2rem / 2.5rem min-height); horizontal `var(--space-md)` or `var(--space-lg)`.
+**Padding (Secondary)**: Vertical from size (1.5rem / 2rem / 2.5rem min-height for small / medium / large); horizontal `var(--space-md)` or `var(--space-lg)`.
 
 ```css
 .ds-btn--secondary {
@@ -390,6 +391,7 @@ Map to your CSS variables or theme. Values come from `color-semantic.json` and `
 | `ds-btn--secondary` | Secondary variant |
 | `ds-btn--destructive` | Destructive variant |
 | `ds-btn--ghost` | Ghost variant |
+| `ds-btn--small` | Small size (24px height) |
 | `ds-btn--medium` | Medium size (default) |
 | `ds-btn--large` | Large size |
 | `ds-btn-loading-label` | Wrapper for label when loading (keeps it visible) |
@@ -402,13 +404,13 @@ Example: `<button class="ds-btn ds-btn--primary ds-btn--medium" type="submit">Sa
 ```ts
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'destructive' | 'ghost'
-  size?: 'large' | 'medium'
+  size?: 'small' | 'medium' | 'large'
   loading?: boolean
 }
 ```
 
 - **variant**: Default `'secondary'` if not specified.
-- **size**: Default `'medium'`.
+- **size**: `'small'` | `'medium'` | `'large'`. Default `'medium'`.
 - **loading**: When `true`, render spinner, set `aria-busy="true"`, and treat as disabled for click (e.g. `disabled={disabled || loading}`).
 - Forward ref to the underlying `<button>`. Spread remaining props (e.g. `type`, `onClick`, `aria-label`).
 
