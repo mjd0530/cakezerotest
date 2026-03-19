@@ -1,0 +1,19 @@
+---
+description: Voice and tone for user-visible UI copy — sentence case, concise buttons, clear errors, accessible reading level. Apply when generating labels, headings, buttons, errors, hints, toasts, or aria text.
+globs:
+alwaysApply: true
+---
+
+# Voice and tone — Agentic Design System
+
+When writing **user-visible strings** (labels, buttons, headings, errors, hints, empty states, toasts, `aria-label`, `aria-live` messages), follow `design-system/policies/voice-and-tone.md`.
+
+**Quick rules:**
+
+- **Sentence case** for UI chrome (not title case).
+- **Buttons:** ≤3 words when possible; verb-led.
+- **Errors:** What happened + what to do next; consistent terminology.
+- **Accessible:** Plain language (~7th-grade level where possible); pair with correct ARIA per `accessibility.md`.
+- **Concise:** Short lines; avoid corporate filler.
+
+Full guidance: `design-system/policies/voice-and-tone.md`.

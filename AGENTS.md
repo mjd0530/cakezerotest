@@ -32,6 +32,10 @@ Value needed (color / size / spacing / radius)?
 
                      Still never use a magic number.
 
+User-visible copy (labels, buttons, errors, headings)?
+
+  └─ Read design-system/policies/voice-and-tone.md (sentence case, concise, clear errors).
+
 ```
 
 ---
@@ -122,6 +126,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/policies/tokens-and-css.md` | When implementing component specs; mapping tokens to CSS properties |
 
+| `design-system/policies/voice-and-tone.md` | Any user-visible copy: labels, buttons, headings, errors, hints, toasts, empty states, aria text |
+
 ### Cursor rules
 
 | File | When to read |
@@ -133,6 +139,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 | `.cursor/rules/iconography.mdc` | Using any icon |
 
 | `.cursor/rules/tokens-css.mdc` | Generating or editing UI that uses design tokens |
+
+| `.cursor/rules/voice-and-tone.mdc` | Generating or editing user-visible UI copy |
 
 ### Intents
 
@@ -202,11 +210,13 @@ Execute these steps in order. Do not skip.
 
    - Radius / z-index / breakpoints → read from the relevant component or page doc.
 
-5. **When implementing components**, ensure each spec property maps to the correct CSS property; read `design-system/policies/tokens-and-css.md` when turning specs into code.
+5. **User-visible copy** — For labels, buttons, headings, errors, hints, empty states, toasts, and screen-reader strings (`aria-label`, `aria-live`, etc.), read `design-system/policies/voice-and-tone.md` and apply tone, capitalization, and clarity rules.
 
-6. **Check the gap rule** for anything not found (see §4).
+6. **When implementing components**, ensure each spec property maps to the correct CSS property; read `design-system/policies/tokens-and-css.md` when turning specs into code.
 
-7. **Write the UI** using only documented components and resolved token values.
+7. **Check the gap rule** for anything not found (see §4).
+
+8. **Write the UI** using only documented components and resolved token values.
 
 ---
 
@@ -261,6 +271,8 @@ These apply to every line of UI code. Check output against this list before fini
 - [ ] Motion respects `prefers-reduced-motion`, per `motion.md`.
 
 - [ ] All interactive elements are WCAG 2.2 AA compliant, per `accessibility.md`.
+
+- [ ] User-visible copy follows `voice-and-tone.md` (sentence case, concise buttons, actionable errors, consistent terms).
 
 - [ ] Destructive actions follow the destructive-action intent flow.
 
