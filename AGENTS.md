@@ -90,6 +90,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/tokens/spacing.md` | How to apply spacing tokens, token table, and usage guidance |
 
+| `design-system/tokens/surfaces.md` | Page shell, card vs canvas stacking, modal depth — semantic.background.* |
+
 ### Components
 
 | File | When to read |
