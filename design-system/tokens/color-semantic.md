@@ -36,12 +36,12 @@ Semantic tokens map **primitive** colors (see `color-primitives.json`) to **usag
 
 | Token | Primitive reference | Usage | Contrast note |
 |-------|---------------------|--------|----------------|
-| `semantic.background.base` | `primitive.common.white` | Page and app root **background** (full-bleed shell). | Pair with `text.primary` and `text.secondary`; both meet 4.5:1 on white. |
-| `semantic.background.surface` | `primitive.gray.50` | Cards, panels, raised areas. | Slight contrast with `background.base`. Use `text.primary` on surface for ≥4.5:1. |
-| `semantic.background.surfaceElevated` | `primitive.common.white` | Modals, dropdowns, popovers. | Use border from `primitive.gray.200` for 3:1 UI element contrast. |
+| `semantic.background.base` | `primitive.zinc.50` | Page and app root **background** (full-bleed shell). Light gray (~#FAFAFA) in light mode. | Pair with `text.primary` and `text.secondary`; verify ≥4.5:1 on `zinc.50` (typically met for body type). |
+| `semantic.background.surface` | `primitive.common.white` | Cards, panels, raised areas — **white** on the gray **base**. | Use `text.primary` on surface for ≥4.5:1 on white. |
+| `semantic.background.surfaceElevated` | `primitive.common.white` | Modals, dropdowns, popovers. | Same fill as **surface** in light; use border + shadow vs layer below (`primitive.gray.200` border for 3:1 UI). |
 | `semantic.background.subtle` | `primitive.gray.100` | Disabled backgrounds, subtle sections. | Use `primitive.gray.700` or darker for text on subtle for ≥4.5:1. |
 
-**Usage guidance:** Prefer **background.base** → surface → surfaceElevated for stacking (page **background**, then cards, then overlays). Avoid putting body text on `subtle` unless it is large or secondary.
+**Usage guidance:** Prefer **background.base** → surface → surfaceElevated for stacking (light gray **page**, **white** cards/panels, then **white** overlays separated by border/shadow). Avoid putting body text on `subtle` unless it is large or secondary.
 
 ---
 
@@ -49,9 +49,9 @@ Semantic tokens map **primitive** colors (see `color-primitives.json`) to **usag
 
 | Token | Primitive reference | Usage | Contrast note |
 |-------|---------------------|--------|----------------|
-| `semantic.text.primary` | `primitive.gray.900` | Body copy, headings. | Gray.900 on white ≥7:1 (WCAG AA). Use for main content. |
-| `semantic.text.secondary` | `primitive.gray.600` | Supporting text, captions, labels. | Gray.600 on white ≥4.5:1. |
-| `semantic.text.muted` | `primitive.gray.500` | Placeholders, hints, disabled text. | ~4.5:1 on white; prefer for large or non-critical text. |
+| `semantic.text.primary` | `primitive.gray.900` | Body copy, headings. | Gray.900 on white ≥7:1; on `background.base` (zinc.50) still strong — use for main content on **base** and **surface**. |
+| `semantic.text.secondary` | `primitive.gray.600` | Supporting text, captions, labels. | Gray.600 on white ≥4.5:1; verify on `zinc.50` for critical small text. |
+| `semantic.text.muted` | `primitive.gray.500` | Placeholders, hints, disabled text. | ~4.5:1 on white; on light gray **base**, prefer large or non-critical text. |
 | `semantic.text.inverse` | `primitive.common.white` | Text on dark backgrounds (primary button, dark header). | Ensure background is dark enough for ≥4.5:1 (e.g. blue.600, slate.700). |
 
 **Accessibility:** Normal text requires **≥4.5:1** contrast; large text (18pt+ or 14pt+ bold) **≥3:1**. All text tokens above are chosen to meet 4.5:1 on their intended backgrounds.

@@ -105,10 +105,10 @@ Controls **must not** change outer size when the user moves focus into the field
 | State | Trigger | Background | Border | Value text | Placeholder | Notes |
 |-------|---------|------------|--------|------------|-------------|--------|
 | **Default (empty)** | Rest, no value | `var(--color-bg-subtle)` | `1px solid var(--color-border-input)` | — | `var(--color-text-secondary)` | Placeholder is hint only; meet contrast for large/non-critical use or use `text.muted` if spec allows. |
-| **Default (filled)** | Rest, has value | `var(--color-bg-background)` | `1px solid var(--color-border-input)` | `var(--color-text-primary)` | — | Same as Figma `surface/input-rest`. |
-| **Hover** | `:hover` (enabled) | `var(--color-bg-background)` | `1px solid var(--color-border-input)` | inherits | inherits | No hover when disabled. |
-| **Active** | `:active` (optional) | `var(--color-bg-background)` | `1px solid var(--color-primary)` | inherits | inherits | Optional; keep **1px** width; may match focus border color. |
-| **Focus visible** | `:focus-visible` | `var(--color-bg-background)` | `1px solid var(--color-primary)` | inherits | inherits | **Same 1px width** as rest; add `outline` / focus-ring tokens (§7). Do not thicken border. |
+| **Default (filled)** | Rest, has value | `var(--color-bg-surface)` | `1px solid var(--color-border-input)` | `var(--color-text-primary)` | — | White field on cards (`semantic.background.surface`); same as Figma `surface/input-rest`. |
+| **Hover** | `:hover` (enabled) | `var(--color-bg-surface)` | `1px solid var(--color-border-input)` | inherits | inherits | No hover when disabled. |
+| **Active** | `:active` (optional) | `var(--color-bg-surface)` | `1px solid var(--color-primary)` | inherits | inherits | Optional; keep **1px** width; may match focus border color. |
+| **Focus visible** | `:focus-visible` | `var(--color-bg-surface)` | `1px solid var(--color-primary)` | inherits | inherits | **Same 1px width** as rest; add `outline` / focus-ring tokens (§7). Do not thicken border. |
 | **Disabled** | `disabled` / `aria-disabled` | `var(--color-bg-subtle)` | `1px solid var(--color-border-disabled)` | `var(--color-text-muted)` | `var(--color-text-muted)` | `cursor: not-allowed`; optional `opacity` if token-aligned. |
 | **Error** | `aria-invalid="true"` or invalid state | `var(--color-danger-muted)` | `1px solid var(--color-danger)` | `var(--color-text-primary)` | `var(--color-text-secondary)` | Show error row (§2). |
 | **Success** | Valid / confirmed (product-defined) | `var(--color-success-muted)` | `1px solid var(--color-success)` | `var(--color-text-primary)` | — | Optional; use when design requires inline success. |
@@ -128,7 +128,7 @@ Map Figma variables to semantic tokens and typical CSS variables. Implementation
 | Placeholder (minimal) | semantic.text.muted | `--color-text-muted` | (when secondary too strong) |
 | Muted / disabled text | semantic.text.muted | `--color-text-muted` | text/disabled |
 | Input background (empty) | semantic.background.subtle | `--color-bg-subtle` | surface/input |
-| Input background (filled, hover, focus) | semantic.background.base | `--color-bg-background` | surface/input-rest, surface/input-hover, surface/input-focus |
+| Input background (filled, hover, focus) | semantic.background.surface | `--color-bg-surface` | surface/input-rest, surface/input-hover, surface/input-focus (field sits on **base** or **surface**; use **surface** token so the control reads white on gray page) |
 | Neutral input border | semantic.secondary.default | `--color-border-input` | border/input |
 | Focus / active border accent | semantic.primary.default | `--color-primary` | border/focus |
 | Disabled border | *(primitive gray.400)* | `--color-border-disabled` | border/disabled |
@@ -228,7 +228,7 @@ Optional short transition on border/background (`motion.duration.normal`, `motio
   outline: var(--focus-ring-width) solid var(--focus-ring-color);
   outline-offset: 2px;
   border-color: var(--color-primary);
-  background: var(--color-bg-background);
+  background: var(--color-bg-surface);
 }
 ```
 

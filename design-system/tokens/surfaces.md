@@ -55,9 +55,9 @@ Values are **primitive references** from [`color-semantic.json`](color-semantic.
 
 | Semantic token | Primitive reference | When to use | Text pairing | Border / edge notes |
 |----------------|---------------------|-------------|--------------|---------------------|
-| `semantic.background.base` | `primitive.common.white` | Page and app **root background**; full-bleed shell behind main layout. | `semantic.text.primary`, `semantic.text.secondary` | — |
-| `semantic.background.surface` | `primitive.gray.50` | **Cards, panels**, sidebars, tables on **base** — one step “above” the root. | `semantic.text.primary` on surface (≥4.5:1) | Optional 1px border from `primitive.gray.200` for card edge (≥3:1 UI) per product. |
-| `semantic.background.surfaceElevated` | `primitive.common.white` | **Modals, dropdowns, popovers**, date-picker panels — floats above surface/**base**. | Same as **base**-level text rules on white | Prefer border from `primitive.gray.200` for ≥3:1 separation from what is behind (`color-semantic.md` §3). |
+| `semantic.background.base` | `primitive.zinc.50` | Page and app **root background**; light gray full-bleed shell (~#FAFAFA). | `semantic.text.primary`, `semantic.text.secondary` (verify contrast on gray) | — |
+| `semantic.background.surface` | `primitive.common.white` | **Cards, panels**, sidebars, tables — **white** on the gray **base**. | `semantic.text.primary` on surface (≥4.5:1) | Optional 1px border from `primitive.gray.200` for card edge (≥3:1 UI) per product. |
+| `semantic.background.surfaceElevated` | `primitive.common.white` | **Modals, dropdowns, popovers** — **white** like **surface** in light theme; floats above cards. | Same as **surface** for text | Border + shadow vs layer below (`color-semantic.md` §3); do not rely on hue difference alone in light mode. |
 | `semantic.background.subtle` | `primitive.gray.100` | **Disabled** regions, subtle sections, empty input backgrounds (see `components/input.md`). | `primitive.gray.700` or darker for body text (≥4.5:1) | Do not assume long copy on subtle without checking contrast. |
 
 **Guidance (same as `color-semantic.md`):** Prefer **background.base → surface → surfaceElevated** when stacking. Avoid long **primary** body text on `subtle` unless type size/weight and contrast are verified.
@@ -87,7 +87,7 @@ This repository does not ship a global `variables.css`; **apps** should alias se
 |---------------|----------------------|-----------|
 | Page / app **background** (root) | `--color-bg-background` | `semantic.background.base` |
 | Surface (card/panel) | `--color-bg-surface` | `semantic.background.surface` |
-| Elevated (modal/popover) | `--color-bg-surface-elevated` or `--color-bg-background` when same as **base** in light | `semantic.background.surfaceElevated` |
+| Elevated (modal/popover) | `--color-bg-surface-elevated` (often same value as `--color-bg-surface` in light — both white) | `semantic.background.surfaceElevated` |
 | Subtle | `--color-bg-subtle` | `semantic.background.subtle` |
 
 **Legacy:** Older specs may reference `--color-bg-canvas` for the same role as **`semantic.background.base`**; new work should prefer **`--color-bg-background`**.
@@ -99,7 +99,7 @@ This repository does not ship a global `variables.css`; **apps** should alias se
 ## 6. Examples for agents
 
 - **Dashboard with a card grid:** `body` or app root `background: var(--color-bg-background)`; each **card** `background: var(--color-bg-surface)`; **modal** `background: var(--color-bg-surface-elevated)` (or theme equivalent) with border token for separation.
-- **Settings page (single column):** Page **background** uses **base**; optional **grouped sections** as `surface` cards; **inputs** use `subtle` / **base** per `input.md` for the control fill, not necessarily the whole page.
+- **Settings page (single column):** Page **background** uses **base** (light gray); **surface** white cards; **inputs** use `subtle` when empty and **surface** when filled per `input.md`.
 - **Modal over a dimmed page:** Overlay scrim uses a separate overlay token (often primitive black at opacity — not a `semantic.background.*` surface); **dialog panel** uses `surfaceElevated` + `aria` per `components/modal.md`.
 
 ---
@@ -113,18 +113,12 @@ This repository does not ship a global `variables.css`; **apps** should alias se
 
 ---
 
-## 8. Gray page and white cards (common product pattern)
+## 8. Light theme summary
 
-Many products use a **light gray page** (e.g. close to `#FAFAFA`, similar to `primitive.zinc.50` in [`color-primitives.json`](color-primitives.json)) with **white** **cards** on top.
+In **light** mode, **`color-semantic.json`** encodes the usual **gray page + white cards** pattern:
 
-**Current canonical mapping in `color-semantic.json` (light) is different:**
-
-- **background.base** is **white** (`primitive.common.white`).
-- **Surface** (cards/panels) is **`primitive.gray.50`** (#F9FAFB per primitives file) — a **very light gray**, not white.
-
-So today’s tokens describe **white app root** and **slightly gray cards**, not gray root and white cards. To match **gray page + white cards** literally while keeping semantic naming honest, you would **change** `color-semantic.json` (and §3 in `color-semantic.md`) — for example map **base** → a light gray primitive and `surface` → `common.white` — then re-run contrast documentation. That is a **design-system change**, not implied by this document alone.
-
-Until then, treat **`color-semantic.json`** as source of truth and use this file for **how to stack** the roles.
+- **`semantic.background.base`** → `primitive.zinc.50` (~#FAFAFA) for the app shell.
+- **`semantic.background.surface`** and **`surfaceElevated`** → `primitive.common.white` for cards, panels, and overlays (overlays need **border + shadow** to read above white cards).
 
 ---
 
@@ -136,8 +130,8 @@ Until then, treat **`color-semantic.json`** as source of truth and use this file
 | [`color-semantic-dark.md`](color-semantic-dark.md) | Dark theme surfaces and theme switching |
 | [`components/card.md`](../components/card.md) | Card component on `surface` |
 | [`components/modal.md`](../components/modal.md) | Elevated surfaces and overlays |
-| [`components/input.md`](../components/input.md) | `subtle` / **base** for controls |
+| [`components/input.md`](../components/input.md) | `subtle` (empty) / **surface** (filled) for controls on cards |
 
 ---
 
-*Reference version: 1.1 — `semantic.background.canvas` renamed to `semantic.background.base`; canonical CSS alias `--color-bg-background`.*
+*Reference version: 1.2 — Light theme: `background.base` = zinc.50 (gray shell), `surface` / `surfaceElevated` = white.*

@@ -48,19 +48,19 @@
     },
     "background": {
       "base": {
-        "value": "{primitive.common.white}",
+        "value": "{primitive.zinc.50}",
         "type": "color",
-        "description": "Page and app root background (full-bleed shell). Prefer in light mode; pair with text.primary and text.secondary."
+        "description": "Page and app root background (full-bleed shell). Light gray in light mode; pair with text.primary and text.secondary (verify contrast on zinc.50)."
       },
       "surface": {
-        "value": "{primitive.gray.50}",
+        "value": "{primitive.common.white}",
         "type": "color",
-        "description": "Cards, panels, raised surfaces. Slight contrast with background.base. Text on surface: use text.primary (≥4.5:1)."
+        "description": "Cards, panels, raised surfaces — white on light gray base. Text on surface: use text.primary (≥4.5:1)."
       },
       "surfaceElevated": {
         "value": "{primitive.common.white}",
         "type": "color",
-        "description": "Modals, dropdowns, popovers. Use with border from primitive.gray.200 for 3:1 UI element contrast."
+        "description": "Modals, dropdowns, popovers. Same white as surface in light theme; separate with border from primitive.gray.200 and shadow for ≥3:1 UI contrast vs layer below."
       },
       "subtle": {
         "value": "{primitive.gray.100}",

@@ -120,13 +120,12 @@ On completion: Construct a query string and pass to the search endpoint.
 [AI_LAYOUT_RULES]
 
 PAGE BACKGROUND
-- Background color: light grey
-  Recommended value: #F3F4F6 (or equivalent: gray-100, hsl(220,14%,96%), `semantic.background.base` / `--color-bg-background` when theme maps base to grey)
+- Use `semantic.background.base` / `--color-bg-background` (light theme: `primitive.zinc.50`, ~#FAFAFA).
   This applies to the full viewport / page background on ALL forms pages without exception.
 
 FORM CARD
 - Every form must be contained within a card component that sits on top of the page background.
-- Card background: white (#FFFFFF) or near-white.
+- Card background: `semantic.background.surface` / `--color-bg-surface` (white in light theme).
 - Card should have visible but subtle elevation: use a soft box-shadow (e.g. 0 1px 4px rgba(0,0,0,0.08))
   or a light border (e.g. 1px solid #E5E7EB).
 - Card should have adequate internal padding (recommended: 24px–40px).
@@ -157,4 +156,4 @@ FORM CARD
 
 ---
 
-*Template version: 1.2 — Layout rules: page background + card; align naming with `semantic.background.base` / `--color-bg-background`.*
+*Template version: 1.3 — Gray page (`base`) + white card (`surface`) per `color-semantic.json` light.*
