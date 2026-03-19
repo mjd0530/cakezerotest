@@ -15,7 +15,7 @@ version: 2.0
 token_sources:
   - design-system/tokens/color-semantic.json
   - design-system/tokens/typography.json
-  - design-system/tokens/spacing (e.g. 4px base)
+  - design-system/tokens/spacing.json
 ```
 
 ---

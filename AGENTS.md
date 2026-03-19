@@ -78,6 +78,10 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/tokens/color-semantic.md` | Confirm contrast ratio (4.5:1 text / 3:1 UI) or semantic role meaning |
 
+| `design-system/tokens/spacing.json` | Any padding, margin, gap, or layout spacing value |
+
+| `design-system/tokens/spacing.md` | How to apply spacing tokens, token table, and usage guidance |
+
 ### Components
 
 | File | When to read |
@@ -194,7 +198,9 @@ Execute these steps in order. Do not skip.
 
    - Typography → `typography.json`.
 
-   - Spacing / radius / z-index / breakpoints → read from the relevant component or page doc.
+   - Spacing → `spacing.json` and `spacing.md` first; then the relevant component or page doc for layout-specific overrides.
+
+   - Radius / z-index / breakpoints → read from the relevant component or page doc.
 
 5. **When implementing components**, ensure each spec property maps to the correct CSS property; read `design-system/policies/tokens-and-css.md` when turning specs into code.
 

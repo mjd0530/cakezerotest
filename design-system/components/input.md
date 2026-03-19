@@ -16,8 +16,9 @@ figma_source: MCP get_design_context on selected Input / Text field component (v
 token_sources:
   - design-system/tokens/color-semantic.json
   - design-system/tokens/typography.json
+  - design-system/tokens/spacing.json
   - design-system/tokens/color-primitives.json
-spacing_scale: space.xs | space.sm | space.md | space.lg (same naming as components/button.md; no spacing.json in repo)
+spacing_scale: space.xs | space.sm | space.md | space.lg | space.xl | space.2xl | space.3xl (see design-system/tokens/spacing.md)
 radius: radius.sm | radius.md (use var(--radius-sm) for control corners per Figma 4px default)
 ```
 

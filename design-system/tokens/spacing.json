@@ -1,0 +1,41 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "description": "Spacing scale for AI and code. Values in rem (16px root). Aligns with 4px base and dashboard page reference scale where overlapping. Use for padding, margin, gap, and layout spacing.",
+  "spacing": {
+    "xs": {
+      "value": "0.25rem",
+      "type": "dimension",
+      "description": "4px — Tight stacks (e.g. label to control), dense gaps."
+    },
+    "sm": {
+      "value": "0.5rem",
+      "type": "dimension",
+      "description": "8px — Icon–text gaps, compact internal control padding."
+    },
+    "md": {
+      "value": "0.75rem",
+      "type": "dimension",
+      "description": "12px — Input horizontal padding, medium gaps between related elements."
+    },
+    "lg": {
+      "value": "1rem",
+      "type": "dimension",
+      "description": "16px — Default field spacing, button internal padding references."
+    },
+    "xl": {
+      "value": "1.5rem",
+      "type": "dimension",
+      "description": "24px — Section internal rhythm, larger gaps."
+    },
+    "2xl": {
+      "value": "2rem",
+      "type": "dimension",
+      "description": "32px — Block separation within a page region."
+    },
+    "3xl": {
+      "value": "3rem",
+      "type": "dimension",
+      "description": "48px — Major section spacing, dashboard-scale rhythm."
+    }
+  }
+}

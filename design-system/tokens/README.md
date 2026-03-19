@@ -27,3 +27,13 @@ All token files live in this folder (`design-system/tokens/`). They are **AI-rea
 **Structure**: `semantic.<role>.<variant>`; each token has `value` (primitive reference), `type`, and `description` (usage + contrast).
 
 **Use**: UI code and AI codegen should prefer semantic tokens over raw primitives so theming and WCAG contrast stay consistent. See `color-semantic.md` for usage guidance and contrast notes (4.5:1 text, 3:1 UI).
+
+## spacing.json
+
+**Contents**: Spacing scale `spacing.xs` through `spacing.3xl` — dimension tokens in **rem** (4px-based ladder; includes 12px `md` for inputs and buttons).  
+**Use**: Padding, margin, gap, and layout spacing. Map to CSS variables (e.g. `var(--space-md)`). See `spacing.md` for the token table, CSS property rules, and usage guidance.
+
+## spacing.md
+
+**Contents**: AI-readable reference — token → rem → typical `--space-*` variable, which properties may use spacing tokens, when to use each step, and codegen rules.  
+**When to read**: Any padding, margin, gap, stack spacing, or layout rhythm not fully specified in a component or page doc.
