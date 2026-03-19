@@ -102,6 +102,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/components/chart.md` | Any data visualization |
 
+| `design-system/components/date-picker.md` | Date or range selection, calendar popover, segmented date fields |
+
 | `design-system/components/dropdown.md` | Any dropdown, select, or menu |
 
 | `design-system/components/input.md` | Any text field, textarea, or search input |

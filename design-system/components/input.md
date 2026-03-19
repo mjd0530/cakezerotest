@@ -43,7 +43,7 @@ Inputs capture user-entered text or numbers in forms. Use an `<input>` or `<text
 | **Hint** | Optional | Helper below or near control; `id` linked via `aria-describedby`. |
 | **Error message** | When invalid | Below control; `aria-describedby` + `aria-invalid="true"` on control. |
 | **Success message** | Optional | Post-validation positive feedback; link with `aria-describedby` when it describes the field state. |
-| **Trailing affordance** | Optional | Icon button (e.g. date picker trigger, password visibility). Must have accessible name; **Material icons only** per `policies/iconography.md`. |
+| **Trailing affordance** | Optional | Icon button (e.g. date picker trigger — see `components/date-picker.md`, password visibility). Must have accessible name; **Material icons only** per `policies/iconography.md`. |
 
 ---
 
