@@ -112,6 +112,8 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/components/sidebar.md` | Any sidebar, nav rail, or side panel |
 
+| `design-system/components/slider.md` | Slider or range control, numeric value along a track |
+
 | `design-system/components/table.md` | Any tabular data |
 
 | `design-system/components/toggle.md` | Any toggle, switch, or on/off control |
