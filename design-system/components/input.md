@@ -11,7 +11,7 @@ document_type: component_spec
 component_id: input
 scope: forms | filters | search | settings
 audience: ai_consumers | developers | designers
-version: 2.0
+version: 2.1
 figma_source: MCP get_design_context on selected Input / Text field component (variable defs aligned to semantic tokens)
 token_sources:
   - design-system/tokens/color-semantic.json
@@ -92,16 +92,26 @@ Default dimensions match Figma **Input / Textarea** (height 40px). Use token-bac
 
 Apply to the input container (wrapper that draws border/background) and native control text/placeholder colors. Do not use `:focus` alone for focus ring; use `:focus-visible` per accessibility policy.
 
+### 6.1 Layout stability (required)
+
+Controls **must not** change outer size when the user moves focus into the field.
+
+- Use **`border-width: 1px` for every state** (default, hover, focus, disabled, error, success). **Never** increase border width on `:focus-visible` (e.g. do not switch from `1px` to `2px` or `3px`) — that shrinks/grows the content box and causes layout shift.
+- Communicate focus with **`border-color`** change (e.g. to `--color-primary`) **and** a **focus ring** via `outline` (preferred, with `outline-offset`) or an outer **`box-shadow`** ring that does not affect layout. The ring must meet minimum **2px** visible indicator per accessibility policy; that thickness applies to **outline/ring**, not to swapping a thicker border.
+- Use **`box-sizing: border-box`** on the control so padding + border are included in `min-height` / width.
+
+### 6.2 State table
+
 | State | Trigger | Background | Border | Value text | Placeholder | Notes |
 |-------|---------|------------|--------|------------|-------------|--------|
-| **Default (empty)** | Rest, no value | `var(--color-bg-subtle)` | `2px solid var(--color-border-input)` | — | `var(--color-text-secondary)` | Placeholder is hint only; meet contrast for large/non-critical use or use `text.muted` if spec allows. |
-| **Default (filled)** | Rest, has value | `var(--color-bg-canvas)` | `2px solid var(--color-border-input)` | `var(--color-text-primary)` | — | Same as Figma `surface/input-rest`. |
-| **Hover** | `:hover` (enabled) | `var(--color-bg-canvas)` | `2px solid var(--color-border-input)` | inherits | inherits | No hover when disabled. |
-| **Active** | `:active` (optional) | `var(--color-bg-canvas)` | `2px solid var(--color-primary)` | inherits | inherits | Optional; may match focus for simplicity. |
-| **Focus visible** | `:focus-visible` | `var(--color-bg-canvas)` | `3px solid var(--color-primary)` | inherits | inherits | Stronger border than rest; alternatively keep `2px` border and add `outline` per focus-ring tokens (see §7). |
-| **Disabled** | `disabled` / `aria-disabled` | `var(--color-bg-subtle)` | `2px solid var(--color-border-disabled)` | `var(--color-text-muted)` | `var(--color-text-muted)` | `cursor: not-allowed`; optional `opacity` if token-aligned. |
-| **Error** | `aria-invalid="true"` or invalid state | `var(--color-danger-muted)` | `2px solid var(--color-danger)` | `var(--color-text-primary)` | `var(--color-text-secondary)` | Show error row (§2). |
-| **Success** | Valid / confirmed (product-defined) | `var(--color-success-muted)` | `2px solid var(--color-success)` | `var(--color-text-primary)` | — | Optional; use when design requires inline success. |
+| **Default (empty)** | Rest, no value | `var(--color-bg-subtle)` | `1px solid var(--color-border-input)` | — | `var(--color-text-secondary)` | Placeholder is hint only; meet contrast for large/non-critical use or use `text.muted` if spec allows. |
+| **Default (filled)** | Rest, has value | `var(--color-bg-canvas)` | `1px solid var(--color-border-input)` | `var(--color-text-primary)` | — | Same as Figma `surface/input-rest`. |
+| **Hover** | `:hover` (enabled) | `var(--color-bg-canvas)` | `1px solid var(--color-border-input)` | inherits | inherits | No hover when disabled. |
+| **Active** | `:active` (optional) | `var(--color-bg-canvas)` | `1px solid var(--color-primary)` | inherits | inherits | Optional; keep **1px** width; may match focus border color. |
+| **Focus visible** | `:focus-visible` | `var(--color-bg-canvas)` | `1px solid var(--color-primary)` | inherits | inherits | **Same 1px width** as rest; add `outline` / focus-ring tokens (§7). Do not thicken border. |
+| **Disabled** | `disabled` / `aria-disabled` | `var(--color-bg-subtle)` | `1px solid var(--color-border-disabled)` | `var(--color-text-muted)` | `var(--color-text-muted)` | `cursor: not-allowed`; optional `opacity` if token-aligned. |
+| **Error** | `aria-invalid="true"` or invalid state | `var(--color-danger-muted)` | `1px solid var(--color-danger)` | `var(--color-text-primary)` | `var(--color-text-secondary)` | Show error row (§2). |
+| **Success** | Valid / confirmed (product-defined) | `var(--color-success-muted)` | `1px solid var(--color-success)` | `var(--color-text-primary)` | — | Optional; use when design requires inline success. |
 
 **Label colors (disabled)** — Label text: `var(--color-text-muted)`; required asterisk when disabled: same or `var(--color-text-muted)` (Figma maps disabled label to muted palette).
 
@@ -153,7 +163,7 @@ Associate the message with the input: `aria-describedby` on the control pointing
 - **aria-describedby**: Space-separated ids for hint, error, and/or success message as applicable.
 - **Contrast**: WCAG 2.2 AA for label, value, placeholder, borders, and messages on their backgrounds (`policies/accessibility.md`).
 - **Keyboard**: Native focus order; trailing icon buttons focusable and activatable with Enter/Space.
-- **Focus**: Visible `:focus-visible` indicator (border and/or outline min 2px per global policy).
+- **Focus**: Visible `:focus-visible` indicator: **outline** or ring ≥ **2px** equivalent per global policy; keep **input border at 1px** so focus does not resize the control (see §6.1).
 
 See `intents/form-submission.md` for validation timing (submit / blur; avoid noisy per-keystroke validation for free text).
 
@@ -198,9 +208,10 @@ Optional short transition on border/background (`motion.duration.normal`, `motio
   color: var(--color-text-primary);
 }
 .ds-input {
+  box-sizing: border-box;
   min-height: 2.5rem;
   padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-md);
-  border: 2px solid var(--color-border-input);
+  border: 1px solid var(--color-border-input);
   border-radius: var(--radius-sm);
   background: var(--color-bg-subtle);
   font-family: var(--font-sans);
@@ -213,10 +224,10 @@ Optional short transition on border/background (`motion.duration.normal`, `motio
   color: var(--color-text-secondary);
 }
 .ds-input:focus-visible {
+  /* Keep border-width 1px — do not thicken here (layout shift). */
   outline: var(--focus-ring-width) solid var(--focus-ring-color);
   outline-offset: 2px;
   border-color: var(--color-primary);
-  border-width: 3px;
   background: var(--color-bg-canvas);
 }
 ```
@@ -238,7 +249,9 @@ Optional short transition on border/background (`motion.duration.normal`, `motio
 
 - **Do** use semantic colors and typography tokens; set `font-size`, `line-height`, and `color` with the correct CSS properties.
 - **Do** use native `<input>` / `<textarea>` and associated label/error semantics.
+- **Do** keep **1px** border width for all states; use **outline** or **box-shadow** for focus emphasis so the field does not resize on focus (§6.1).
 - **Don't** use Tailwind `text-[var(--text-sm)]` thinking it sets font-size — it sets **color**.
+- **Don't** increase `border-width` on `:focus-visible` or between rest and focus — causes shrink/grow.
 - **Don't** validate on every keystroke for long free-text fields unless product requires it.
 
 ---
@@ -249,4 +262,4 @@ On a profile form, add an **Email** field: visible label "Email" linked with `fo
 
 ---
 
-*Spec version: 2.0 — Complete spec; Figma selection via MCP; token-mapped for codegen.*
+*Spec version: 2.1 — 1px borders; stable layout on focus (no border-width change); token-mapped for codegen.*
