@@ -1,0 +1,150 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "description": "Dark theme semantic color tokens for AI and code. Same role keys as color-semantic.json; values reference design-system/tokens/color-primitives.json only. Use with the same CSS variable names as light theme; swap token source by theme (e.g. [data-theme=\"dark\"]).",
+  "semantic": {
+    "primary": {
+      "default": {
+        "value": "{primitive.blue.400}",
+        "type": "color",
+        "description": "Dark theme: primary actions, links, focus rings. Lighter blue for contrast on dark canvas. Pair with primary.onPrimary (white) on filled buttons; exceeds 4.5:1 on typical dark fills."
+      },
+      "hover": {
+        "value": "{primitive.blue.300}",
+        "type": "color",
+        "description": "Dark theme: hover for primary controls. Lighter than default for visible hover on dark UI."
+      },
+      "muted": {
+        "value": "{primitive.blue.900}",
+        "type": "color",
+        "description": "Dark theme: primary tint backgrounds (badges, highlights). Pair text with primitive.blue.100 or blue.200 for ≥4.5:1."
+      },
+      "onPrimary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Dark theme: text/icons on primary fill (blue.400/500). White on blue.400 meets ≥4.5:1."
+      }
+    },
+    "secondary": {
+      "default": {
+        "value": "{primitive.slate.500}",
+        "type": "color",
+        "description": "Dark theme: secondary buttons, borders, links. Pair with onSecondary (white) on filled secondary; ≥4.5:1 on dark canvas for borders."
+      },
+      "hover": {
+        "value": "{primitive.slate.400}",
+        "type": "color",
+        "description": "Dark theme: hover for secondary controls. Lighter slate for visibility."
+      },
+      "muted": {
+        "value": "{primitive.slate.800}",
+        "type": "color",
+        "description": "Dark theme: neutral secondary surfaces. Pair text with primitive.slate.100 or slate.200 for ≥4.5:1."
+      },
+      "onSecondary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Dark theme: text/icons on secondary fill (slate.500). White on slate.500 meets ≥4.5:1."
+      }
+    },
+    "background": {
+      "canvas": {
+        "value": "{primitive.gray.900}",
+        "type": "color",
+        "description": "Dark theme: page/app root background. Pair with text.primary (gray.50) and text.secondary (gray.400) for ≥4.5:1."
+      },
+      "surface": {
+        "value": "{primitive.gray.800}",
+        "type": "color",
+        "description": "Dark theme: cards, panels. Elevated above canvas. Use text.primary on surface for ≥4.5:1."
+      },
+      "surfaceElevated": {
+        "value": "{primitive.gray.700}",
+        "type": "color",
+        "description": "Dark theme: modals, dropdowns, popovers. Use border from primitive.gray.600 or zinc.600 for ≥3:1 UI contrast."
+      },
+      "subtle": {
+        "value": "{primitive.zinc.800}",
+        "type": "color",
+        "description": "Dark theme: disabled backgrounds, subtle sections. Pair text with primitive.gray.300 or zinc.300 for ≥4.5:1."
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{primitive.gray.50}",
+        "type": "color",
+        "description": "Dark theme: body and headings on dark backgrounds. Gray.50 on gray.900 ≥4.5:1."
+      },
+      "secondary": {
+        "value": "{primitive.gray.400}",
+        "type": "color",
+        "description": "Dark theme: supporting text, labels. Gray.400 on gray.900 ≥4.5:1."
+      },
+      "muted": {
+        "value": "{primitive.gray.500}",
+        "type": "color",
+        "description": "Dark theme: placeholders, hints, disabled text. Prefer on gray.900/800; use large text or non-critical UI if contrast is borderline."
+      },
+      "inverse": {
+        "value": "{primitive.gray.900}",
+        "type": "color",
+        "description": "Dark theme: text on light fills (e.g. inverted chip, light accent). Use when background is light (gray.100+)."
+      }
+    },
+    "success": {
+      "default": {
+        "value": "{primitive.green.400}",
+        "type": "color",
+        "description": "Dark theme: success messages, positive indicators. Green.400 on gray.900 ≥4.5:1."
+      },
+      "muted": {
+        "value": "{primitive.green.900}",
+        "type": "color",
+        "description": "Dark theme: success backgrounds. Pair text with primitive.green.200 or green.300 for ≥4.5:1."
+      },
+      "onSuccess": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Dark theme: text/icons on success fill (e.g. green.500/600 button). White on green.600 > 4.5:1."
+      }
+    },
+    "warning": {
+      "default": {
+        "value": "{primitive.amber.400}",
+        "type": "color",
+        "description": "Dark theme: warnings, caution. Amber.400 on gray.900 ≥4.5:1 for normal text."
+      },
+      "muted": {
+        "value": "{primitive.amber.900}",
+        "type": "color",
+        "description": "Dark theme: warning backgrounds. Pair text with primitive.amber.200 or amber.300 for ≥4.5:1."
+      },
+      "onWarning": {
+        "value": "{primitive.amber.100}",
+        "type": "color",
+        "description": "Dark theme: text/icons on warning fill (e.g. amber.600/700). Amber.100 on amber.700 meets ≥4.5:1; use common.white on amber.500 if product prefers light-on-amber."
+      }
+    },
+    "danger": {
+      "default": {
+        "value": "{primitive.red.400}",
+        "type": "color",
+        "description": "Dark theme: errors, destructive actions. Red.400 on gray.900 ≥4.5:1."
+      },
+      "hover": {
+        "value": "{primitive.red.300}",
+        "type": "color",
+        "description": "Dark theme: hover for danger controls."
+      },
+      "muted": {
+        "value": "{primitive.red.900}",
+        "type": "color",
+        "description": "Dark theme: error backgrounds. Pair text with primitive.red.200 or red.300 for ≥4.5:1."
+      },
+      "onDanger": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Dark theme: text/icons on danger fill. White on red.500/600 > 4.5:1."
+      }
+    }
+  }
+}

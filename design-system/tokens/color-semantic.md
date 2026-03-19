@@ -1,5 +1,7 @@
 # Semantic color tokens — AI-readable reference
 
+**Light theme (this document + `color-semantic.json`).** For **dark theme**, use the same semantic **role names** with [`color-semantic-dark.json`](color-semantic-dark.json) and [`color-semantic-dark.md`](color-semantic-dark.md) — one set of CSS variables, values switched by theme.
+
 Semantic tokens map **primitive** colors (see `color-primitives.json`) to **usage roles**. Use these tokens in UI code and design so theming and accessibility stay consistent. All semantic tokens **reference only** primitives; no hex values are defined here.
 
 ---

@@ -82,6 +82,10 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/tokens/color-semantic.md` | Confirm contrast ratio (4.5:1 text / 3:1 UI) or semantic role meaning |
 
+| `design-system/tokens/color-semantic-dark.json` | Semantic colors for dark theme / dark surfaces — same roles as light, different primitive mapping |
+
+| `design-system/tokens/color-semantic-dark.md` | Dark theme contrast pairing, theme mapping (same CSS vars as light) |
+
 | `design-system/tokens/spacing.json` | Any padding, margin, gap, or layout spacing value |
 
 | `design-system/tokens/spacing.md` | How to apply spacing tokens, token table, and usage guidance |
@@ -202,7 +206,7 @@ Execute these steps in order. Do not skip.
 
 4. **Identify all token values** you will need: color, typography, spacing, radius.
 
-   - Color → `color-semantic.json` first; `color-primitives.json` only if no semantic token fits.
+   - Color → `color-semantic.json` first; `color-primitives.json` only if no semantic token fits. For **dark theme** or dark surfaces, use `color-semantic-dark.json` / `color-semantic-dark.md` (same semantic roles and CSS variable names; swap value source by theme).
 
    - Typography → `typography.json`.
 
