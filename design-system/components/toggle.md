@@ -78,12 +78,12 @@ Single default size from Figma; use **rem** and tokens — no magic numbers in i
 
 | State | `aria-checked` | Track background | Thumb background | Notes |
 |-------|----------------|------------------|------------------|--------|
-| **Off — default** | `false` | `--color-toggle-track-off` | `--color-toggle-thumb-off` | Map track to `primitive.slate.700`; thumb to `semantic.background.canvas` (see §7). |
+| **Off — default** | `false` | `--color-toggle-track-off` | `--color-toggle-thumb-off` | Map track to `primitive.slate.700`; thumb to `semantic.background.base` (see §7). |
 | **Off — hover** | `false` | `--color-toggle-track-off-hover` | `--color-toggle-thumb-off` | Map track to `primitive.slate.900` (Figma: dark hover). |
 | **Off — pressed** | `false` | `--color-toggle-track-off` | `--color-toggle-thumb-off-pressed` | Figma: thumb may **widen** to ~24px (`1.5rem`) toward the on direction; optional affordance. |
 | **On — default** | `true` | `var(--color-primary)` | `var(--color-primary-on)` | `semantic.primary.default` + `semantic.primary.onPrimary`. |
 | **On — hover** | `true` | `--color-toggle-track-on-hover` | `var(--color-primary-on)` | Map to `primitive.blue.800` or `semantic.primary.hover` per theme. |
-| **On — pressed** | `true` | `var(--color-primary)` | `--color-toggle-thumb-on-pressed` | Figma: thumb may widen with **surface** fill (`semantic.background.canvas`); optional. |
+| **On — pressed** | `true` | `var(--color-primary)` | `--color-toggle-thumb-on-pressed` | Figma: thumb may widen with **surface** fill (`semantic.background.base`); optional. |
 | **Disabled — off** | `false` | `--color-toggle-track-disabled` | `--color-toggle-thumb-disabled` | Track: `primitive.gray.200`; thumb: `primitive.slate.500`. |
 | **Disabled — on** | `true` | Same disabled track | Same disabled thumb | Thumb position remains **on** (end side). |
 
@@ -107,7 +107,7 @@ Map Figma roles to semantic primitives and **typical CSS variables**. Implementa
 | Track on | `semantic.primary.default` | `--color-primary` |
 | Track on (hover) | `primitive.blue.800` or `semantic.primary.hover` | `--color-toggle-track-on-hover` |
 | Thumb on primary fill | `semantic.primary.onPrimary` | `--color-primary-on` |
-| Thumb off (on dark track) | `semantic.background.canvas` | `--color-toggle-thumb-off` |
+| Thumb off (on dark track) | `semantic.background.base` | `--color-toggle-thumb-off` |
 | Disabled track | `primitive.gray.200` | `--color-toggle-track-disabled` |
 | Disabled thumb | `primitive.slate.500` | `--color-toggle-thumb-disabled` |
 | Label (enabled) | `semantic.text.primary` | `--color-text-primary` |

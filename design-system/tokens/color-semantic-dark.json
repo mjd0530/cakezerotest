@@ -6,7 +6,7 @@
       "default": {
         "value": "{primitive.blue.400}",
         "type": "color",
-        "description": "Dark theme: primary actions, links, focus rings. Lighter blue for contrast on dark canvas. Pair with primary.onPrimary (white) on filled buttons; exceeds 4.5:1 on typical dark fills."
+        "description": "Dark theme: primary actions, links, focus rings. Lighter blue for contrast on dark background.base. Pair with primary.onPrimary (white) on filled buttons; exceeds 4.5:1 on typical dark fills."
       },
       "hover": {
         "value": "{primitive.blue.300}",
@@ -28,7 +28,7 @@
       "default": {
         "value": "{primitive.slate.500}",
         "type": "color",
-        "description": "Dark theme: secondary buttons, borders, links. Pair with onSecondary (white) on filled secondary; ≥4.5:1 on dark canvas for borders."
+        "description": "Dark theme: secondary buttons, borders, links. Pair with onSecondary (white) on filled secondary; ≥4.5:1 on dark background.base for borders."
       },
       "hover": {
         "value": "{primitive.slate.400}",
@@ -47,15 +47,15 @@
       }
     },
     "background": {
-      "canvas": {
+      "base": {
         "value": "{primitive.gray.900}",
         "type": "color",
-        "description": "Dark theme: page/app root background. Pair with text.primary (gray.50) and text.secondary (gray.400) for ≥4.5:1."
+        "description": "Dark theme: page and app root background. Pair with text.primary (gray.50) and text.secondary (gray.400) for ≥4.5:1."
       },
       "surface": {
         "value": "{primitive.gray.800}",
         "type": "color",
-        "description": "Dark theme: cards, panels. Elevated above canvas. Use text.primary on surface for ≥4.5:1."
+        "description": "Dark theme: cards, panels. Elevated above background.base. Use text.primary on surface for ≥4.5:1."
       },
       "surfaceElevated": {
         "value": "{primitive.gray.700}",

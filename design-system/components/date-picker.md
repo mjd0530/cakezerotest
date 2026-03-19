@@ -62,7 +62,7 @@ Segment internals: use native `<input inputmode="numeric">` or similar with `max
 
 | Part | Required | Description |
 |------|----------|-------------|
-| **Panel container** | Yes | Elevated surface: `background` from `semantic.background.surfaceElevated` (light theme: same primitive as canvas — typical CSS `var(--color-bg-canvas)` until a dedicated `--color-bg-surface-elevated` alias exists). `border: 1px solid` neutral border (primitive `gray.200` / weak border per `color-semantic.md` §3). `border-radius: var(--radius-md)`. Shadow: Figma "Elevation Light/2" (dual drop shadow). **Gap:** no shadow token in repo — add `--shadow-elevation-2` in theme or use motion/elevation doc when defined. |
+| **Panel container** | Yes | Elevated surface: `background` from `semantic.background.surfaceElevated` (light theme: same primitive as **base** — typical CSS `var(--color-bg-background)` until a dedicated `--color-bg-surface-elevated` alias exists). `border: 1px solid` neutral border (primitive `gray.200` / weak border per `color-semantic.md` §3). `border-radius: var(--radius-md)`. Shadow: Figma "Elevation Light/2" (dual drop shadow). **Gap:** no shadow token in repo — add `--shadow-elevation-2` in theme or use motion/elevation doc when defined. |
 | **Header** | Yes | Height band Figma ~80px: use `padding: var(--space-xl) var(--space-xl)` and vertically center row; `border-bottom: 1px solid` same as panel border. Contains: previous month **icon button** (Material `chevron_left`), **month** and **year** controls (Figma: secondary-style toggle buttons, 32px height, `radius-md`), next month **icon button** (`chevron_right`). |
 | **Weekday row** | Yes | Seven columns, each cell `min-width`/`width` aligned to day column (Figma ~50px). Weekday label: `font-size: var(--text-base)`, `font-weight: 600`, `line-height: var(--line-height-body-m)`, `color: var(--color-primary)` (maps Figma `text/onCanvas-primary` to semantic primary accent on light surface). |
 | **Day grid** | Yes | 6×7 logical grid; `gap: var(--space-sm)` between cells (Figma 8px). Each day is a **button** `type="button"`. |
@@ -137,7 +137,7 @@ Map **Today** to secondary button tokens (**button** variant secondary). **Cance
 
 | Role | Semantic token | Typical CSS variable | Figma variable (reference only) |
 |------|----------------|----------------------|----------------------------------|
-| Panel surface | semantic.background.surfaceElevated | `--color-bg-canvas` (light; alias until `--color-bg-surface-elevated`) | surface/card |
+| Panel surface | semantic.background.surfaceElevated | `--color-bg-background` (light; alias until `--color-bg-surface-elevated`) | surface/card |
 | Panel border | (weak neutral) | `--color-border-subtle` | border/weak |
 | Primary fill (selected day, OK) | semantic.primary.default | `--color-primary` | surface/button-primary |
 | On-primary text | semantic.primary.onPrimary | `--color-primary-on` | text/onPrimary |

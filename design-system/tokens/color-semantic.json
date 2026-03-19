@@ -47,15 +47,15 @@
       }
     },
     "background": {
-      "canvas": {
+      "base": {
         "value": "{primitive.common.white}",
         "type": "color",
-        "description": "Page/app root background. Prefer in light mode; pair with text.primary and text.secondary."
+        "description": "Page and app root background (full-bleed shell). Prefer in light mode; pair with text.primary and text.secondary."
       },
       "surface": {
         "value": "{primitive.gray.50}",
         "type": "color",
-        "description": "Cards, panels, raised surfaces. Slight contrast with canvas. Text on surface: use text.primary (≥4.5:1)."
+        "description": "Cards, panels, raised surfaces. Slight contrast with background.base. Text on surface: use text.primary (≥4.5:1)."
       },
       "surfaceElevated": {
         "value": "{primitive.common.white}",

@@ -11,7 +11,7 @@ All token files live in this folder (`design-system/tokens/`). They are **AI-rea
 
 **Source**: Extracted from Figma via MCP `get_variable_defs`.  
 **Contents**: Core color primitives only — palette scales (50–900) and `common.white` / `common.black`.  
-**Excluded**: Semantic tokens (e.g. `text/primary`, `surface/canvas`, `border/weak`, `brand/signatureRed`) live in Figma and reference these primitives.
+**Excluded**: Semantic tokens (e.g. `text/primary`, `surface/*` roles, `border/weak`, `brand/signatureRed`) live in Figma and reference these primitives.
 
 **Structure**:
 - `primitive.common`: white, black
@@ -26,7 +26,7 @@ All token files live in this folder (`design-system/tokens/`). They are **AI-rea
 **Contents**: Semantic roles — primary, secondary, background, text, success, warning, danger — with default, hover, muted, and on-* variants where applicable.  
 **Structure**: `semantic.<role>.<variant>`; each token has `value` (primitive reference), `type`, and `description` (usage + contrast).
 
-**Use**: UI code and AI codegen should prefer semantic tokens over raw primitives so theming and WCAG contrast stay consistent. See `color-semantic.md` for usage guidance and contrast notes (4.5:1 text, 3:1 UI). For **canvas → card → modal stacking** and how `semantic.background.*` layers work, see `surfaces.md`.
+**Use**: UI code and AI codegen should prefer semantic tokens over raw primitives so theming and WCAG contrast stay consistent. See `color-semantic.md` for usage guidance and contrast notes (4.5:1 text, 3:1 UI). For **background.base → card → modal stacking** and how `semantic.background.*` layers work, see `surfaces.md`.
 
 ## color-semantic-dark.json
 

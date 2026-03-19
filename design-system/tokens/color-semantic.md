@@ -36,12 +36,12 @@ Semantic tokens map **primitive** colors (see `color-primitives.json`) to **usag
 
 | Token | Primitive reference | Usage | Contrast note |
 |-------|---------------------|--------|----------------|
-| `semantic.background.canvas` | `primitive.common.white` | Page/app root background. | Pair with `text.primary` and `text.secondary`; both meet 4.5:1 on white. |
-| `semantic.background.surface` | `primitive.gray.50` | Cards, panels, raised areas. | Slight contrast with canvas. Use `text.primary` on surface for ≥4.5:1. |
+| `semantic.background.base` | `primitive.common.white` | Page and app root **background** (full-bleed shell). | Pair with `text.primary` and `text.secondary`; both meet 4.5:1 on white. |
+| `semantic.background.surface` | `primitive.gray.50` | Cards, panels, raised areas. | Slight contrast with `background.base`. Use `text.primary` on surface for ≥4.5:1. |
 | `semantic.background.surfaceElevated` | `primitive.common.white` | Modals, dropdowns, popovers. | Use border from `primitive.gray.200` for 3:1 UI element contrast. |
 | `semantic.background.subtle` | `primitive.gray.100` | Disabled backgrounds, subtle sections. | Use `primitive.gray.700` or darker for text on subtle for ≥4.5:1. |
 
-**Usage guidance:** Prefer canvas → surface → surfaceElevated for stacking. Avoid putting body text on `subtle` unless it is large or secondary.
+**Usage guidance:** Prefer **background.base** → surface → surfaceElevated for stacking (page **background**, then cards, then overlays). Avoid putting body text on `subtle` unless it is large or secondary.
 
 ---
 
@@ -97,7 +97,7 @@ Semantic tokens map **primitive** colors (see `color-primitives.json`) to **usag
 
 ## Accessibility contrast summary
 
-- **Text (normal):** Use tokens that guarantee **≥4.5:1** on their background (e.g. `text.primary` on `background.canvas`, `primary.onPrimary` on primary fill).
+- **Text (normal):** Use tokens that guarantee **≥4.5:1** on their background (e.g. `text.primary` on `background.base`, `primary.onPrimary` on primary fill).
 - **Text (large):** **≥3:1** is minimum; prefer 4.5:1 where possible.
 - **UI components and graphics:** **≥3:1** against adjacent backgrounds.
 - **Focus rings:** Use primary or a contrasting color at **≥3:1**; minimum 2px visible ring.

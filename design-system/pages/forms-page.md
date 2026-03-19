@@ -119,20 +119,20 @@ On completion: Construct a query string and pass to the search endpoint.
 ```
 [AI_LAYOUT_RULES]
 
-PAGE CANVAS
+PAGE BACKGROUND
 - Background color: light grey
-  Recommended value: #F3F4F6 (or equivalent: gray-100, hsl(220,14%,96%), --color-canvas)
+  Recommended value: #F3F4F6 (or equivalent: gray-100, hsl(220,14%,96%), `semantic.background.base` / `--color-bg-background` when theme maps base to grey)
   This applies to the full viewport / page background on ALL forms pages without exception.
 
 FORM CARD
-- Every form must be contained within a card component that sits on top of the canvas.
+- Every form must be contained within a card component that sits on top of the page background.
 - Card background: white (#FFFFFF) or near-white.
 - Card should have visible but subtle elevation: use a soft box-shadow (e.g. 0 1px 4px rgba(0,0,0,0.08))
   or a light border (e.g. 1px solid #E5E7EB).
 - Card should have adequate internal padding (recommended: 24px–40px).
 - Card should have rounded corners (recommended: border-radius 8px–16px).
-- Card width: constrained (recommended max-width 640px for single-column forms), centered on canvas.
-- Do NOT render form fields directly onto the grey canvas. The card is always required.
+- Card width: constrained (recommended max-width 640px for single-column forms), centered on the page background.
+- Do NOT render form fields directly onto the grey page background. The card is always required.
 ```
 
 ---
@@ -157,4 +157,4 @@ FORM CARD
 
 ---
 
-*Template version: 1.1 — Added global visual layout rules (canvas + card pattern).*
+*Template version: 1.2 — Layout rules: page background + card; align naming with `semantic.background.base` / `--color-bg-background`.*
