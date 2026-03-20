@@ -1,6 +1,6 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
-  "description": "Lenovo Zero-Floor light theme. Same structural roles as color-semantic.json plus Lenovo extensions (border, link, interactive, feedback, extra backgrounds). All values reference design-system/tokens/color-primitives.json primitive.lenovo.* and common.white only. Success uses on-brand blue (not green). Use with [data-theme=\"lenovo\"] and design-system/css/design-tokens-lenovo.css.",
+  "description": "Lenovo Zero-Floor light theme. Same structural roles as color-semantic.json plus Lenovo extensions (border, link, interactive, feedback, extra backgrounds). All values reference design-system/tokens/color-primitives.json primitive.lenovo.* and common.white only. Success uses on-brand blue (not green). Use with [data-theme=\"lenovo\"] and design-system/tokens/design-tokens-lenovo.css.",
   "semantic": {
     "primary": {
       "default": {

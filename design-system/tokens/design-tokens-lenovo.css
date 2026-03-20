@@ -1,5 +1,5 @@
 /**
- * Lenovo Zero-Floor theme — mirrors design-system/tokens/color-semantic-lenovo.json
+ * Lenovo Zero-Floor theme — mirrors color-semantic-lenovo.json (same folder).
  * Activate with [data-theme="lenovo"] on a root ancestor (e.g. html or #root).
  */
 [data-theme='lenovo'] {

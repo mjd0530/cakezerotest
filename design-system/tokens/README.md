@@ -2,7 +2,24 @@
 
 All token files live in this folder (`design-system/tokens/`). They are **AI-readable**: structured for consumption by code generators, design tools, and assistants.
 
-**CSS mirrors:** Default and Lenovo theme variables live in [`design-system/css/`](../css/) (`design-tokens.css`, `design-tokens-lenovo.css`). Import those in your app; you do not need Storybook.
+## Reference CSS (same folder as JSON)
+
+Static mirrors of semantic tokens as **CSS custom properties** live **next to** the JSON files in this folder. **JSON remains the source of truth** — update the `.css` files when tokens change (or generate them in a future build step).
+
+| File | When to load |
+|------|----------------|
+| [`design-tokens.css`](design-tokens.css) | Default theme — align with `color-semantic.json` |
+| [`design-tokens-lenovo.css`](design-tokens-lenovo.css) | After `design-tokens.css` — variables under `[data-theme="lenovo"]`; align with `color-semantic-lenovo.json` |
+
+Example for consuming apps:
+
+```html
+<link rel="stylesheet" href="path/to/design-system/tokens/design-tokens.css" />
+<link rel="stylesheet" href="path/to/design-system/tokens/design-tokens-lenovo.css" />
+<html data-theme="lenovo">
+```
+
+No dev server is required to use these files.
 
 ## typography.json
 

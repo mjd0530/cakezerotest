@@ -46,11 +46,11 @@ User-visible copy (labels, buttons, errors, headings)?
 
 design tokens (DTCG-style JSON), component specs, policies, user intent flows, and
 
-page layout specs. **Reference CSS** under `design-system/css/` mirrors semantic colors as custom properties for consuming apps — specs and JSON tokens remain authoritative. This repo *is*
+page layout specs. **Reference CSS** (e.g. `design-tokens.css` in `design-system/tokens/`) mirrors semantic colors as custom properties for consuming apps — specs and JSON tokens remain authoritative. This repo *is*
 
 the source of truth for generating or validating UI.
 
-**Stack:** Markdown docs, JSON tokens, Cursor rules `.cursor/rules/*.mdc`; optional reference CSS in `design-system/css/`.
+**Stack:** Markdown docs, JSON tokens, Cursor rules `.cursor/rules/*.mdc`; reference CSS mirrors as `.css` files alongside JSON in `design-system/tokens/`.
 
 Figma is the design source; color primitives sync via MCP `get_variable_defs`).
 
@@ -168,11 +168,11 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 |---|---|
 
-| `design-system/css/README.md` | How to import default vs Lenovo theme CSS; no dev server required |
+| `design-system/tokens/README.md` § Reference CSS | How to import default vs Lenovo theme CSS from `design-system/tokens/` |
 
-| `design-system/css/design-tokens.css` | Default theme CSS variables (keep aligned with `color-semantic.json`) |
+| `design-system/tokens/design-tokens.css` | Default theme CSS variables (keep aligned with `color-semantic.json`) |
 
-| `design-system/css/design-tokens-lenovo.css` | Lenovo theme under `[data-theme="lenovo"]` (keep aligned with `color-semantic-lenovo.json`) |
+| `design-system/tokens/design-tokens-lenovo.css` | Lenovo theme under `[data-theme="lenovo"]` (keep aligned with `color-semantic-lenovo.json`) |
 
 ### Intents
 
@@ -214,7 +214,7 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 No repo-wide `variables.css` or `theme.ts` at the root — semantic definitions live in `design-system/tokens/*.json` and companion `.md` files.
 
-**Reference CSS:** [`design-system/css/`](design-system/css/) — import `design-tokens.css` for the default theme and `design-tokens-lenovo.css` for Lenovo (`[data-theme="lenovo"]` on a root element). See [`design-system/css/README.md`](design-system/css/README.md). Keep files aligned with `color-semantic.json` and `color-semantic-lenovo.json` when tokens change.
+**Reference CSS:** In [`design-system/tokens/`](design-system/tokens/) — import `design-tokens.css` for the default theme and `design-tokens-lenovo.css` for Lenovo (`[data-theme="lenovo"]` on a root element). See [`design-system/tokens/README.md`](design-system/tokens/README.md) § Reference CSS. Keep files aligned with `color-semantic.json` and `color-semantic-lenovo.json` when tokens change.
 
 Figma is the design source. Do not reference Figma variable names or pixel values
 
@@ -318,7 +318,7 @@ These apply to every line of UI code. Check output against this list before fini
 
 | Component docs | `design-system/components/` | `kebab-case.md` |
 
-| Token files | `design-system/tokens/` | `kebab-case.json` / `.md` |
+| Token files | `design-system/tokens/` | `kebab-case.json` / `.md`; plus `design-tokens.css` / `design-tokens-lenovo.css` (see README § Reference CSS) |
 
 | Policy docs | `design-system/policies/` | `kebab-case.md` |
 
@@ -327,8 +327,6 @@ These apply to every line of UI code. Check output against this list before fini
 | Page docs | `design-system/pages/` | `kebab-case.md` |
 
 | Cursor rules | `.cursor/rules/` | `kebab-case.mdc` |
-
-| Reference theme CSS | `design-system/css/` | `design-tokens.css`, `design-tokens-lenovo.css`; see `README.md` in that folder |
 
 **Headings and tables:** Sentence case. Token names: dot-notation (e.g. `semantic.primary.default`, `typography.fontSize.sm`).
 

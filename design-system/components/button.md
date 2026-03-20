@@ -71,7 +71,7 @@ All variants support the same size scale. Values use design-system tokens.
 
 ### Lenovo Zero-Floor theme (`data-theme="lenovo"`)
 
-When implementing buttons for the Lenovo brand layer, read [`design-system/tokens/lenovo-zero-floor.md`](../tokens/lenovo-zero-floor.md) and [`color-semantic-lenovo.json`](../tokens/color-semantic-lenovo.json). **Label weight:** use **`font-weight: 500`** (medium), not `600` — Lenovo disallows semibold/600. Use semantic interactive tokens (`semantic.interactive.primary*`, `semantic.feedback.error` for destructive) and CSS variables from `design-system/css/design-tokens-lenovo.css`; primary fill is Lenovo purple, not red.
+When implementing buttons for the Lenovo brand layer, read [`design-system/tokens/lenovo-zero-floor.md`](../tokens/lenovo-zero-floor.md) and [`color-semantic-lenovo.json`](../tokens/color-semantic-lenovo.json). **Label weight:** use **`font-weight: 500`** (medium), not `600` — Lenovo disallows semibold/600. Use semantic interactive tokens (`semantic.interactive.primary*`, `semantic.feedback.error` for destructive) and CSS variables from `design-system/tokens/design-tokens-lenovo.css`; primary fill is Lenovo purple, not red.
 
 ---
 

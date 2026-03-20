@@ -26,7 +26,7 @@ This rule applies **only** when the task explicitly targets **Lenovo Zero-Floor*
 
 ## Implementation
 
-- Load Lenovo CSS variables from [`design-system/css/design-tokens-lenovo.css`](design-system/css/design-tokens-lenovo.css) (after `design-system/css/design-tokens.css`) under `[data-theme="lenovo"]`.
+- Load Lenovo CSS variables from [`design-system/tokens/design-tokens-lenovo.css`](design-system/tokens/design-tokens-lenovo.css) (after `design-system/tokens/design-tokens.css`) under `[data-theme="lenovo"]`.
 - **Dark Lenovo:** [`color-semantic-dark-lenovo.json`](design-system/tokens/color-semantic-dark-lenovo.json) is **provisional** — verify contrast before shipping.
 
 Do not duplicate long hex tables in generated code; reference tokens and the CSS file so values stay single-sourced.

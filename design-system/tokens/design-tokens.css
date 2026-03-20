@@ -1,6 +1,6 @@
 /**
  * Default (Agentic) theme — semantic colors as CSS custom properties.
- * Canonical: ../tokens/color-semantic.json
+ * Canonical: color-semantic.json (same folder).
  */
 :root {
   --color-bg-background: #fafafa;

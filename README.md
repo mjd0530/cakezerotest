@@ -1,6 +1,6 @@
 # Cakezerotest — Design system (AI-ready)
 
-Design-system repository: tokens, component specs, policies, intents, and page patterns. Reference **CSS variable files** live under `design-system/css/` for apps that consume tokens as custom properties; markdown and JSON specs remain the **source of truth** for generating or validating UI. Intended for **development teams and AI coding tools** (e.g. Cursor, Copilot, Codex) when building interfaces.
+Design-system repository: tokens, component specs, policies, intents, and page patterns. Reference **CSS variable files** (`design-tokens.css`, `design-tokens-lenovo.css`) live in `design-system/tokens/` alongside JSON for apps that consume tokens as custom properties; markdown and JSON specs remain the **source of truth** for generating or validating UI. Intended for **development teams and AI coding tools** (e.g. Cursor, Copilot, Codex) when building interfaces.
 
 ---
 
@@ -8,8 +8,7 @@ Design-system repository: tokens, component specs, policies, intents, and page p
 
 | Path | Contents |
 |------|----------|
-| `design-system/css/` | Reference theme CSS (`design-tokens.css`, `design-tokens-lenovo.css`); see `design-system/css/README.md` |
-| `design-system/tokens/` | Color (semantic + primitives), typography (JSON + docs) |
+| `design-system/tokens/` | Color (semantic + primitives), typography, spacing (JSON + docs) **and** reference theme CSS (`design-tokens.css`, `design-tokens-lenovo.css`); see `README.md` § Reference CSS in that folder |
 | `design-system/components/` | Button, card, modal, table, input, dropdown, sidebar, etc. |
 | `design-system/policies/` | Accessibility, iconography, motion, typography |
 | `design-system/intents/` | Confirmation, destructive action, form submission, navigation, etc. |

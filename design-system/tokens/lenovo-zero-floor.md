@@ -7,7 +7,7 @@ AI- and developer-readable reference for the **Lenovo-branded** color and typogr
 ## When to use
 
 - Products or surfaces that must follow **Lenovo Zero-Floor** brand rules (purple primary, restricted red, on-brand blue success).
-- Apply in code with **`[data-theme="lenovo"]`** on a root element (e.g. `html` or `#root`) and load [`design-system/css/design-tokens-lenovo.css`](../css/design-tokens-lenovo.css) after the default [`design-tokens.css`](../css/design-tokens.css) (or an app-local copy generated from the same token source).
+- Apply in code with **`[data-theme="lenovo"]`** on a root element (e.g. `html` or `#root`) and load [`design-tokens-lenovo.css`](design-tokens-lenovo.css) after the default [`design-tokens.css`](design-tokens.css) (or an app-local copy generated from the same token source).
 
 **Canonical token files**
 
@@ -24,7 +24,7 @@ Also read [`spacing.json`](spacing.json) for `spacing.xsPlus`, `spacing.lgPlus`,
 
 ## Theme switching
 
-- **Default theme:** `color-semantic.json` + default CSS variables (e.g. Storybook `design-tokens.css` on `:root`).
+- **Default theme:** `color-semantic.json` + default CSS variables (`design-tokens.css` on `:root`).
 - **Lenovo theme:** `color-semantic-lenovo.json` + variables under **`[data-theme="lenovo"]`**.
 - **Dark Lenovo:** Prefer a single attribute strategy agreed by the product, e.g. `[data-theme="lenovo"][data-color-mode="dark"]`, loading values from `color-semantic-dark-lenovo.json`. Dark Lenovo tokens are **provisional**; verify contrast (WCAG 2.2 AA) before release.
 
@@ -72,7 +72,7 @@ Follow [`design-system/policies/accessibility.md`](../policies/accessibility.md)
 
 ## CSS variable map (light)
 
-Variables are defined in `design-system/css/design-tokens-lenovo.css`. Semantic source: `color-semantic-lenovo.json`.
+Variables are defined in `design-system/tokens/design-tokens-lenovo.css`. Semantic source: `color-semantic-lenovo.json`.
 
 | Semantic path (JSON) | Typical CSS variable |
 |------------------------|----------------------|
@@ -94,7 +94,7 @@ Legacy aliases (`--color-text-primary`, `--color-danger`, …) are set where nee
 
 ## Radius, shadow, motion (reference)
 
-No separate JSON file yet; use tokens as CSS variables under `[data-theme="lenovo"]` in [`design-system/css/design-tokens-lenovo.css`](../css/design-tokens-lenovo.css):
+No separate JSON file yet; use tokens as CSS variables under `[data-theme="lenovo"]` in [`design-tokens-lenovo.css`](design-tokens-lenovo.css):
 
 - **Radius:** `--radius-xs` through `--radius-full` (6px default interactive = `--radius-md` 0.375rem).
 - **Focus:** `--shadow-focus` uses purple 200 tint.
