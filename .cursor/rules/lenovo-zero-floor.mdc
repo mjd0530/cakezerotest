@@ -1,0 +1,32 @@
+---
+description: Lenovo Zero-Floor brand theme — use when implementing UI with data-theme=lenovo or Lenovo-branded surfaces. Purple primary, restricted red, no weight 600, token-only colors.
+globs:
+alwaysApply: false
+---
+
+# Lenovo Zero-Floor — scoped agent rule
+
+This rule applies **only** when the task explicitly targets **Lenovo Zero-Floor** or **`[data-theme="lenovo"]`** UI. The default Agentic theme (`color-semantic.json`) is unchanged for other work.
+
+## Read first
+
+- [`design-system/tokens/lenovo-zero-floor.md`](design-system/tokens/lenovo-zero-floor.md) — brand rules, theme switching, CSS map
+- [`design-system/tokens/color-semantic-lenovo.json`](design-system/tokens/color-semantic-lenovo.json) — light semantics
+- [`design-system/tokens/typography-lenovo.json`](design-system/tokens/typography-lenovo.json) — font stacks; weights **400 / 500 / 700 only** (no `font-semibold` / 600)
+- [`AGENTS.md`](AGENTS.md) §2 — full document index
+
+## Non-negotiables
+
+- **No hardcoded colors** — CSS variables or semantic tokens from the Lenovo files above. See also [`.cursor/rules/tokens-css.mdc`](tokens-css.mdc): each token maps to the **correct CSS property** (e.g. font-size tokens on `font-size`, not Tailwind `text-*` for size).
+- **Purple primary** — CTAs, focus rings, info accents; use `semantic.primary.*` / `--color-interactive-primary` (or aliased `--color-primary` in Storybook CSS).
+- **Red only** for destructive actions, error feedback, invalid fields, and **Lenovo logo** — never for links, nav, or generic interactive states. Do not use `red-*` / `rose-*` / `pink-*` Tailwind for interactive UI.
+- **Success = on-brand blue** in Lenovo (`semantic.success.*`), not green — differs from default theme.
+- **Icons:** still **Material Design only** per [`design-system/policies/iconography.md`](design-system/policies/iconography.md).
+- **Accessibility:** still WCAG 2.2 AA per [`design-system/policies/accessibility.md`](design-system/policies/accessibility.md) and `.cursor/rules/accessibility.mdc`.
+
+## Implementation
+
+- Load Lenovo CSS variables from [`design-system/css/design-tokens-lenovo.css`](design-system/css/design-tokens-lenovo.css) (after `design-system/css/design-tokens.css`) under `[data-theme="lenovo"]`.
+- **Dark Lenovo:** [`color-semantic-dark-lenovo.json`](design-system/tokens/color-semantic-dark-lenovo.json) is **provisional** — verify contrast before shipping.
+
+Do not duplicate long hex tables in generated code; reference tokens and the CSS file so values stay single-sourced.

@@ -1,0 +1,348 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "description": "PROVISIONAL: Lenovo Zero-Floor dark theme. Same role keys as color-semantic-lenovo.json. Values reference primitive.lenovo.* only. Contrast audit required before production — treat as placeholder until validated against WCAG 2.2 AA on dark surfaces.",
+  "semantic": {
+    "primary": {
+      "default": {
+        "value": "{primitive.lenovo.primary.300}",
+        "type": "color",
+        "description": "Provisional dark: lighter purple for primary on dark base."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.primary.200}",
+        "type": "color",
+        "description": "Provisional dark: primary hover (lighter)."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.primary.900}",
+        "type": "color",
+        "description": "Provisional dark: primary tint surfaces. Pair text with primary.100–200."
+      },
+      "onPrimary": {
+        "value": "{primitive.lenovo.neutral.900}",
+        "type": "color",
+        "description": "Provisional dark: text on light primary fill if using light primary on dark UI."
+      }
+    },
+    "secondary": {
+      "default": {
+        "value": "{primitive.lenovo.secondary.100}",
+        "type": "color",
+        "description": "Provisional dark: secondary accent on dark background."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Provisional dark: secondary hover."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Provisional dark: secondary surfaces. Pair with secondary.100."
+      },
+      "onSecondary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Provisional dark: on filled secondary if fill is dark blue."
+      }
+    },
+    "background": {
+      "base": {
+        "value": "{primitive.lenovo.neutral.950}",
+        "type": "color",
+        "description": "Provisional dark: app root."
+      },
+      "surface": {
+        "value": "{primitive.lenovo.neutral.900}",
+        "type": "color",
+        "description": "Provisional dark: cards."
+      },
+      "surfaceElevated": {
+        "value": "{primitive.lenovo.neutral.800}",
+        "type": "color",
+        "description": "Provisional dark: modals."
+      },
+      "subtle": {
+        "value": "{primitive.lenovo.neutral.800}",
+        "type": "color",
+        "description": "Provisional dark: muted sections."
+      },
+      "emphasis": {
+        "value": "{primitive.lenovo.primary.900}",
+        "type": "color",
+        "description": "Provisional dark: hero bands."
+      },
+      "inverse": {
+        "value": "{primitive.lenovo.neutral.0}",
+        "type": "color",
+        "description": "Provisional dark: light overlay chrome (rare)."
+      },
+      "brand": {
+        "value": "{primitive.lenovo.primary.900}",
+        "type": "color",
+        "description": "Provisional dark: brand wash."
+      },
+      "brandStrong": {
+        "value": "{primitive.lenovo.primary.700}",
+        "type": "color",
+        "description": "Provisional dark: strong brand fill."
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{primitive.lenovo.neutral.50}",
+        "type": "color",
+        "description": "Provisional dark: main text on dark surfaces."
+      },
+      "secondary": {
+        "value": "{primitive.lenovo.neutral.300}",
+        "type": "color",
+        "description": "Provisional dark: secondary text."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.neutral.400}",
+        "type": "color",
+        "description": "Provisional dark: muted text."
+      },
+      "inverse": {
+        "value": "{primitive.lenovo.neutral.900}",
+        "type": "color",
+        "description": "Provisional dark: text on light chips."
+      },
+      "placeholder": {
+        "value": "{primitive.lenovo.neutral.500}",
+        "type": "color",
+        "description": "Provisional dark: placeholders."
+      },
+      "disabled": {
+        "value": "{primitive.lenovo.neutral.500}",
+        "type": "color",
+        "description": "Provisional dark: disabled text."
+      },
+      "brand": {
+        "value": "{primitive.lenovo.primary.200}",
+        "type": "color",
+        "description": "Provisional dark: brand text."
+      },
+      "link": {
+        "value": "{primitive.lenovo.secondary.100}",
+        "type": "color",
+        "description": "Provisional dark: links."
+      },
+      "linkHover": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Provisional dark: link hover."
+      }
+    },
+    "success": {
+      "default": {
+        "value": "{primitive.lenovo.secondary.100}",
+        "type": "color",
+        "description": "Provisional dark: success (blue family)."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Provisional dark: success backgrounds."
+      },
+      "onSuccess": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Provisional dark: on success fill."
+      }
+    },
+    "warning": {
+      "default": {
+        "value": "{primitive.lenovo.accent.300}",
+        "type": "color",
+        "description": "Provisional dark: warning."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.accent.800}",
+        "type": "color",
+        "description": "Provisional dark: warning bg."
+      },
+      "onWarning": {
+        "value": "{primitive.lenovo.accent.100}",
+        "type": "color",
+        "description": "Provisional dark: warning text."
+      }
+    },
+    "danger": {
+      "default": {
+        "value": "{primitive.lenovo.accent.300}",
+        "type": "color",
+        "description": "Provisional dark: error/destructive accent."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.accent.100}",
+        "type": "color",
+        "description": "Provisional dark: danger hover."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.accent.800}",
+        "type": "color",
+        "description": "Provisional dark: error backgrounds."
+      },
+      "onDanger": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Provisional dark: on danger fill."
+      }
+    },
+    "border": {
+      "subtle": {
+        "value": "{primitive.lenovo.neutral.800}",
+        "type": "color",
+        "description": "Provisional dark: dividers."
+      },
+      "default": {
+        "value": "{primitive.lenovo.neutral.700}",
+        "type": "color",
+        "description": "Provisional dark: inputs."
+      },
+      "strong": {
+        "value": "{primitive.lenovo.primary.300}",
+        "type": "color",
+        "description": "Provisional dark: strong border."
+      },
+      "focus": {
+        "value": "{primitive.lenovo.primary.300}",
+        "type": "color",
+        "description": "Provisional dark: focus."
+      },
+      "brand": {
+        "value": "{primitive.lenovo.primary.700}",
+        "type": "color",
+        "description": "Provisional dark: brand border."
+      }
+    },
+    "link": {
+      "default": {
+        "value": "{primitive.lenovo.secondary.100}",
+        "type": "color",
+        "description": "Provisional dark: link."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Provisional dark: link hover."
+      }
+    },
+    "interactive": {
+      "primary": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Provisional dark: primary fill (verify contrast)."
+      },
+      "primaryHover": {
+        "value": "{primitive.lenovo.primary.500}",
+        "type": "color",
+        "description": "Provisional dark: primary hover."
+      },
+      "primaryActive": {
+        "value": "{primitive.lenovo.primary.700}",
+        "type": "color",
+        "description": "Provisional dark: primary active."
+      },
+      "primarySubtle": {
+        "value": "{primitive.lenovo.primary.900}",
+        "type": "color",
+        "description": "Provisional dark: ghost fill."
+      },
+      "primaryText": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Provisional dark: CTA label on primary."
+      },
+      "secondary": {
+        "value": "{primitive.lenovo.secondary.100}",
+        "type": "color",
+        "description": "Provisional dark: secondary."
+      },
+      "secondaryHover": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Provisional dark: secondary hover."
+      },
+      "secondarySubtle": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Provisional dark: secondary subtle."
+      },
+      "disabled": {
+        "value": "{primitive.lenovo.neutral.800}",
+        "type": "color",
+        "description": "Provisional dark: disabled fill."
+      },
+      "disabledText": {
+        "value": "{primitive.lenovo.neutral.500}",
+        "type": "color",
+        "description": "Provisional dark: disabled text."
+      }
+    },
+    "feedback": {
+      "error": {
+        "value": "{primitive.lenovo.accent.300}",
+        "type": "color",
+        "description": "Provisional dark: error accent."
+      },
+      "errorSubtle": {
+        "value": "{primitive.lenovo.accent.800}",
+        "type": "color",
+        "description": "Provisional dark: error bg."
+      },
+      "errorText": {
+        "value": "{primitive.lenovo.accent.100}",
+        "type": "color",
+        "description": "Provisional dark: error text."
+      },
+      "warning": {
+        "value": "{primitive.lenovo.accent.300}",
+        "type": "color",
+        "description": "Provisional dark: warning."
+      },
+      "warningSubtle": {
+        "value": "{primitive.lenovo.accent.800}",
+        "type": "color",
+        "description": "Provisional dark: warning bg."
+      },
+      "warningText": {
+        "value": "{primitive.lenovo.accent.100}",
+        "type": "color",
+        "description": "Provisional dark: warning text."
+      },
+      "success": {
+        "value": "{primitive.lenovo.secondary.100}",
+        "type": "color",
+        "description": "Provisional dark: success."
+      },
+      "successSubtle": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Provisional dark: success bg."
+      },
+      "successText": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Provisional dark: success text."
+      },
+      "info": {
+        "value": "{primitive.lenovo.primary.300}",
+        "type": "color",
+        "description": "Provisional dark: info."
+      },
+      "infoSubtle": {
+        "value": "{primitive.lenovo.primary.900}",
+        "type": "color",
+        "description": "Provisional dark: info bg."
+      },
+      "infoText": {
+        "value": "{primitive.lenovo.primary.100}",
+        "type": "color",
+        "description": "Provisional dark: info text."
+      }
+    }
+  }
+}

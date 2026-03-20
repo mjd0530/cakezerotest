@@ -1,0 +1,348 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "description": "Lenovo Zero-Floor light theme. Same structural roles as color-semantic.json plus Lenovo extensions (border, link, interactive, feedback, extra backgrounds). All values reference design-system/tokens/color-primitives.json primitive.lenovo.* and common.white only. Success uses on-brand blue (not green). Use with [data-theme=\"lenovo\"] and design-system/css/design-tokens-lenovo.css.",
+  "semantic": {
+    "primary": {
+      "default": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Lenovo: primary CTA, focus rings, info emphasis. Deep purple #7A126B. Do not use lenovo.accent (red) for primary."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.primary.800}",
+        "type": "color",
+        "description": "Lenovo: hover for filled primary controls (#4D144A)."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.primary.50}",
+        "type": "color",
+        "description": "Lenovo: subtle primary tint, nav active wash, ghost hover. Pair text with lenovo.primary.800+ for ≥4.5:1."
+      },
+      "onPrimary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text/icons on primary fill."
+      }
+    },
+    "secondary": {
+      "default": {
+        "value": "{primitive.lenovo.secondary.600}",
+        "type": "color",
+        "description": "Lenovo: secondary actions, links, success feedback (#294E95)."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Lenovo: secondary hover / link hover (#11184F)."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Lenovo: secondary ghost backgrounds. Pair text with secondary.900 for ≥4.5:1."
+      },
+      "onSecondary": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text/icons on filled secondary."
+      }
+    },
+    "background": {
+      "base": {
+        "value": "{primitive.lenovo.neutral.0}",
+        "type": "color",
+        "description": "Lenovo: default page surface (white)."
+      },
+      "surface": {
+        "value": "{primitive.lenovo.neutral.0}",
+        "type": "color",
+        "description": "Lenovo: cards and panels on base."
+      },
+      "surfaceElevated": {
+        "value": "{primitive.lenovo.neutral.0}",
+        "type": "color",
+        "description": "Lenovo: modals, popovers — separate with border/shadow."
+      },
+      "subtle": {
+        "value": "{primitive.lenovo.neutral.50}",
+        "type": "color",
+        "description": "Lenovo: secondary surfaces, input fills (#F5F3F5)."
+      },
+      "emphasis": {
+        "value": "{primitive.lenovo.primary.800}",
+        "type": "color",
+        "description": "Lenovo: brand hero, dark headers. Use text.inverse on this fill."
+      },
+      "inverse": {
+        "value": "{primitive.lenovo.neutral.900}",
+        "type": "color",
+        "description": "Lenovo: dark overlays, inverse chrome."
+      },
+      "brand": {
+        "value": "{primitive.lenovo.primary.50}",
+        "type": "color",
+        "description": "Lenovo: brand-tinted wash."
+      },
+      "brandStrong": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Lenovo: filled brand bands. Use onPrimary text."
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "{primitive.lenovo.neutral.900}",
+        "type": "color",
+        "description": "Lenovo: body and headings on light surfaces."
+      },
+      "secondary": {
+        "value": "{primitive.lenovo.neutral.600}",
+        "type": "color",
+        "description": "Lenovo: supporting copy, labels."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.neutral.400}",
+        "type": "color",
+        "description": "Lenovo: de-emphasized text where appropriate."
+      },
+      "inverse": {
+        "value": "{primitive.lenovo.neutral.0}",
+        "type": "color",
+        "description": "Lenovo: text on dark/emphasis surfaces."
+      },
+      "placeholder": {
+        "value": "{primitive.lenovo.neutral.300}",
+        "type": "color",
+        "description": "Lenovo: placeholders and hints."
+      },
+      "disabled": {
+        "value": "{primitive.lenovo.neutral.400}",
+        "type": "color",
+        "description": "Lenovo: disabled text (#8E8A95)."
+      },
+      "brand": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Lenovo: active nav, brand-accented text."
+      },
+      "link": {
+        "value": "{primitive.lenovo.secondary.600}",
+        "type": "color",
+        "description": "Lenovo: hyperlink default."
+      },
+      "linkHover": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Lenovo: hyperlink hover."
+      }
+    },
+    "success": {
+      "default": {
+        "value": "{primitive.lenovo.secondary.600}",
+        "type": "color",
+        "description": "Lenovo: success uses on-brand blue (#294E95), not green — intentional divergence from default theme."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Lenovo: success backgrounds. Pair text with secondary.900."
+      },
+      "onSuccess": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text/icons on success fill."
+      }
+    },
+    "warning": {
+      "default": {
+        "value": "{primitive.lenovo.accent.300}",
+        "type": "color",
+        "description": "Lenovo: warning accent (coral)."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.accent.100}",
+        "type": "color",
+        "description": "Lenovo: warning backgrounds."
+      },
+      "onWarning": {
+        "value": "{primitive.lenovo.accent.700}",
+        "type": "color",
+        "description": "Lenovo: warning text on muted fills."
+      }
+    },
+    "danger": {
+      "default": {
+        "value": "{primitive.lenovo.accent.600}",
+        "type": "color",
+        "description": "Lenovo: destructive actions, errors — red allowed only here and feedback.error (not for primary UI)."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.accent.700}",
+        "type": "color",
+        "description": "Lenovo: danger hover."
+      },
+      "muted": {
+        "value": "{primitive.lenovo.accent.50}",
+        "type": "color",
+        "description": "Lenovo: error backgrounds."
+      },
+      "onDanger": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Text/icons on danger fill."
+      }
+    },
+    "border": {
+      "subtle": {
+        "value": "{primitive.lenovo.neutral.100}",
+        "type": "color",
+        "description": "Lenovo: dividers, hairlines."
+      },
+      "default": {
+        "value": "{primitive.lenovo.neutral.200}",
+        "type": "color",
+        "description": "Lenovo: input borders."
+      },
+      "strong": {
+        "value": "{primitive.lenovo.primary.800}",
+        "type": "color",
+        "description": "Lenovo: emphasized edges."
+      },
+      "focus": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Lenovo: focus ring color (pair with lenovo.primary.200 for ring spread)."
+      },
+      "brand": {
+        "value": "{primitive.lenovo.primary.100}",
+        "type": "color",
+        "description": "Lenovo: brand card borders."
+      }
+    },
+    "link": {
+      "default": {
+        "value": "{primitive.lenovo.secondary.600}",
+        "type": "color",
+        "description": "Lenovo: inline link default (alias of text.link)."
+      },
+      "hover": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Lenovo: inline link hover."
+      }
+    },
+    "interactive": {
+      "primary": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Lenovo: filled primary CTA background."
+      },
+      "primaryHover": {
+        "value": "{primitive.lenovo.primary.800}",
+        "type": "color",
+        "description": "Lenovo: primary CTA hover."
+      },
+      "primaryActive": {
+        "value": "{primitive.lenovo.primary.900}",
+        "type": "color",
+        "description": "Lenovo: primary CTA pressed."
+      },
+      "primarySubtle": {
+        "value": "{primitive.lenovo.primary.50}",
+        "type": "color",
+        "description": "Lenovo: ghost/subtle primary fill."
+      },
+      "primaryText": {
+        "value": "{primitive.common.white}",
+        "type": "color",
+        "description": "Lenovo: label on primary CTA."
+      },
+      "secondary": {
+        "value": "{primitive.lenovo.secondary.600}",
+        "type": "color",
+        "description": "Lenovo: secondary control border/text."
+      },
+      "secondaryHover": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Lenovo: secondary hover emphasis."
+      },
+      "secondarySubtle": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Lenovo: secondary ghost fill."
+      },
+      "disabled": {
+        "value": "{primitive.lenovo.neutral.200}",
+        "type": "color",
+        "description": "Lenovo: disabled control fill."
+      },
+      "disabledText": {
+        "value": "{primitive.lenovo.neutral.400}",
+        "type": "color",
+        "description": "Lenovo: disabled control label."
+      }
+    },
+    "feedback": {
+      "error": {
+        "value": "{primitive.lenovo.accent.600}",
+        "type": "color",
+        "description": "Lenovo: error border/icon."
+      },
+      "errorSubtle": {
+        "value": "{primitive.lenovo.accent.50}",
+        "type": "color",
+        "description": "Lenovo: error banner background."
+      },
+      "errorText": {
+        "value": "{primitive.lenovo.accent.700}",
+        "type": "color",
+        "description": "Lenovo: error message text."
+      },
+      "warning": {
+        "value": "{primitive.lenovo.accent.300}",
+        "type": "color",
+        "description": "Lenovo: warning accent stripe."
+      },
+      "warningSubtle": {
+        "value": "{primitive.lenovo.accent.100}",
+        "type": "color",
+        "description": "Lenovo: warning banner background."
+      },
+      "warningText": {
+        "value": "{primitive.lenovo.accent.700}",
+        "type": "color",
+        "description": "Lenovo: warning title text."
+      },
+      "success": {
+        "value": "{primitive.lenovo.secondary.600}",
+        "type": "color",
+        "description": "Lenovo: success accent (blue)."
+      },
+      "successSubtle": {
+        "value": "{primitive.lenovo.secondary.50}",
+        "type": "color",
+        "description": "Lenovo: success banner background."
+      },
+      "successText": {
+        "value": "{primitive.lenovo.secondary.900}",
+        "type": "color",
+        "description": "Lenovo: success title text."
+      },
+      "info": {
+        "value": "{primitive.lenovo.primary.600}",
+        "type": "color",
+        "description": "Lenovo: info accent (brand purple)."
+      },
+      "infoSubtle": {
+        "value": "{primitive.lenovo.primary.50}",
+        "type": "color",
+        "description": "Lenovo: info banner background."
+      },
+      "infoText": {
+        "value": "{primitive.lenovo.primary.800}",
+        "type": "color",
+        "description": "Lenovo: info title text."
+      }
+    }
+  }
+}

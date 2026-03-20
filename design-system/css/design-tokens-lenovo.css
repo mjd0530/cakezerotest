@@ -1,0 +1,139 @@
+/**
+ * Lenovo Zero-Floor theme — mirrors design-system/tokens/color-semantic-lenovo.json
+ * Activate with [data-theme="lenovo"] on a root ancestor (e.g. html or #root).
+ */
+[data-theme='lenovo'] {
+  /* Lenovo primitive scales (reference — prefer semantic vars in components) */
+  --color-lenovo-primary-50: #f1e1ed;
+  --color-lenovo-primary-100: #d9c1d8;
+  --color-lenovo-primary-200: #bfa0bc;
+  --color-lenovo-primary-300: #a47ea0;
+  --color-lenovo-primary-400: #8a5c86;
+  --color-lenovo-primary-500: #733a6c;
+  --color-lenovo-primary-600: #7a126b;
+  --color-lenovo-primary-700: #60105a;
+  --color-lenovo-primary-800: #4d144a;
+  --color-lenovo-primary-900: #361035;
+  --color-lenovo-primary-950: #1e0013;
+
+  --color-lenovo-secondary-50: #eaeef5;
+  --color-lenovo-secondary-100: #c9d0f0;
+  --color-lenovo-secondary-600: #294e95;
+  --color-lenovo-secondary-900: #11184f;
+
+  --color-lenovo-neutral-0: #ffffff;
+  --color-lenovo-neutral-50: #f5f3f5;
+  --color-lenovo-neutral-100: #e6e2e4;
+  --color-lenovo-neutral-200: #ccc8ce;
+  --color-lenovo-neutral-300: #aba8b1;
+  --color-lenovo-neutral-400: #8e8a95;
+  --color-lenovo-neutral-500: #716c79;
+  --color-lenovo-neutral-600: #4e444e;
+  --color-lenovo-neutral-700: #3c3340;
+  --color-lenovo-neutral-800: #2c2332;
+  --color-lenovo-neutral-900: #1e0013;
+  --color-lenovo-neutral-950: #0f0009;
+
+  --color-accent-50: #faeceb;
+  --color-accent-100: #f0c7bf;
+  --color-accent-300: #f26a52;
+  --color-accent-500: #e1251b;
+  --color-accent-600: #b8252e;
+  --color-accent-700: #871c23;
+  --color-accent-800: #64131e;
+
+  /* Semantic aliases */
+  --color-bg-default: var(--color-lenovo-neutral-0);
+  --color-bg-background: var(--color-lenovo-neutral-50);
+  --color-bg-surface: var(--color-lenovo-neutral-0);
+  --color-bg-surface-elevated: var(--color-lenovo-neutral-0);
+  --color-bg-subtle: var(--color-lenovo-neutral-50);
+  --color-bg-muted: var(--color-lenovo-neutral-100);
+  --color-bg-emphasis: var(--color-lenovo-primary-800);
+  --color-bg-inverse: var(--color-lenovo-neutral-900);
+  --color-bg-brand: var(--color-lenovo-primary-50);
+  --color-bg-brand-strong: var(--color-lenovo-primary-600);
+
+  --color-text-default: var(--color-lenovo-neutral-900);
+  --color-text-primary: var(--color-lenovo-neutral-900);
+  --color-text-subtle: var(--color-lenovo-neutral-600);
+  --color-text-secondary: var(--color-lenovo-neutral-600);
+  --color-text-placeholder: var(--color-lenovo-neutral-300);
+  --color-text-disabled: var(--color-lenovo-neutral-400);
+  --color-text-muted: var(--color-lenovo-neutral-400);
+  --color-text-inverse: var(--color-lenovo-neutral-0);
+  --color-text-brand: var(--color-lenovo-primary-600);
+  --color-text-link: var(--color-lenovo-secondary-600);
+  --color-text-link-hover: var(--color-lenovo-secondary-900);
+
+  --color-border-subtle: var(--color-lenovo-neutral-100);
+  --color-border-default: var(--color-lenovo-neutral-200);
+  --color-border-strong: var(--color-lenovo-primary-800);
+  --color-border-focus: var(--color-lenovo-primary-600);
+  --color-border-brand: var(--color-lenovo-primary-100);
+
+  --color-interactive-primary: var(--color-lenovo-primary-600);
+  --color-interactive-primary-hover: var(--color-lenovo-primary-800);
+  --color-interactive-primary-active: var(--color-lenovo-primary-900);
+  --color-interactive-primary-subtle: var(--color-lenovo-primary-50);
+  --color-interactive-primary-text: #ffffff;
+  --color-interactive-secondary: var(--color-lenovo-secondary-600);
+  --color-interactive-secondary-hover: var(--color-lenovo-secondary-900);
+  --color-interactive-secondary-subtle: var(--color-lenovo-secondary-50);
+  --color-interactive-disabled: var(--color-lenovo-neutral-200);
+  --color-interactive-disabled-text: var(--color-lenovo-neutral-400);
+
+  --color-primary: var(--color-interactive-primary);
+  --color-primary-hover: var(--color-interactive-primary-hover);
+  --color-primary-on: var(--color-interactive-primary-text);
+  --color-primary-muted: var(--color-lenovo-primary-200);
+
+  --color-secondary: var(--color-interactive-secondary);
+  --color-secondary-muted: var(--color-interactive-secondary-subtle);
+  --color-secondary-muted-hover: var(--color-lenovo-secondary-100);
+
+  --color-feedback-error: var(--color-accent-600);
+  --color-feedback-error-subtle: var(--color-accent-50);
+  --color-feedback-error-text: var(--color-accent-700);
+  --color-feedback-warning: var(--color-accent-300);
+  --color-feedback-warning-subtle: var(--color-accent-100);
+  --color-feedback-warning-text: var(--color-accent-700);
+  --color-feedback-success: var(--color-lenovo-secondary-600);
+  --color-feedback-success-subtle: var(--color-lenovo-secondary-50);
+  --color-feedback-success-text: var(--color-lenovo-secondary-900);
+  --color-feedback-info: var(--color-lenovo-primary-600);
+  --color-feedback-info-subtle: var(--color-lenovo-primary-50);
+  --color-feedback-info-text: var(--color-lenovo-primary-800);
+
+  --color-danger: var(--color-feedback-error);
+  --color-danger-hover: var(--color-feedback-error-text);
+  --color-danger-on: #ffffff;
+
+  --font-sans: 'LenovoSans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-full: 9999px;
+
+  --shadow-focus: 0 0 0 3px var(--color-lenovo-primary-200);
+  --shadow-focus-dark: 0 0 0 3px var(--color-lenovo-primary-700);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.06);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.06);
+
+  --motion-duration-fast: 100ms;
+  --motion-duration-normal: 150ms;
+  --motion-duration-dropdown: 200ms;
+  --motion-duration-modal: 300ms;
+  --motion-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  --focus-ring-color: var(--color-lenovo-primary-200);
+  --button-label-font-weight: 500;
+}

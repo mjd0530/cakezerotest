@@ -1,0 +1,48 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "description": "Lenovo Zero-Floor typography overlay. Use with [data-theme=\"lenovo\"] or Lenovo-branded products only — do not replace design-system/tokens/typography.json globally. Allowed font weights: 400, 500, 700 only (no 600). Map display/heading/body roles to typography.json fontSize/lineHeight where sizes align; use these stacks and weight rules for Lenovo.",
+  "lenovoTypography": {
+    "fontFamily": {
+      "sans": {
+        "value": "'LenovoSans', 'Inter', ui-sans-serif, system-ui, sans-serif",
+        "type": "fontFamily",
+        "description": "Lenovo Zero-Floor sans stack. Load LenovoSans in app; Inter is fallback."
+      },
+      "mono": {
+        "value": "'JetBrains Mono', 'Fira Code', ui-monospace, monospace",
+        "type": "fontFamily",
+        "description": "Lenovo Zero-Floor monospace stack."
+      }
+    },
+    "fontWeight": {
+      "allowed": {
+        "value": "400,500,700",
+        "type": "other",
+        "description": "Permitted weights only. Do not use 600 (font-semibold) on Lenovo surfaces — use medium (500) or bold (700)."
+      }
+    },
+    "roleNotes": {
+      "display": {
+        "description": "Align with typography.fontSize scale: use 6xl-equivalent + fontWeight.bold + lineHeight.tight + tighter tracking from policies/typography.md where applicable."
+      },
+      "heading1": {
+        "description": "4xl, bold, tight leading."
+      },
+      "heading2": {
+        "description": "3xl, bold, tight leading."
+      },
+      "heading3": {
+        "description": "2xl, medium (500), snug."
+      },
+      "heading4": {
+        "description": "xl, medium (500), snug."
+      },
+      "body": {
+        "description": "base/sm/lg sizes: weight 400, lineHeight.normal — use typography.json fontSize.body*, bodyL, etc."
+      },
+      "label": {
+        "description": "sm/xs with weight 500, tracking from voice-and-tone — never weight 600."
+      }
+    }
+  }
+}

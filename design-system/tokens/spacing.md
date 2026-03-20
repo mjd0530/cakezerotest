@@ -11,11 +11,14 @@ Map JSON paths to typical CSS custom properties. Implementations should expose `
 | Token path | Value (rem) | Approx px (16px root) | Typical CSS variable |
 |------------|-------------|------------------------|----------------------|
 | `spacing.xs` | 0.25rem | 4 | `var(--space-xs)` |
+| `spacing.xsPlus` | 0.375rem | 6 | `var(--space-xs-plus)` |
 | `spacing.sm` | 0.5rem | 8 | `var(--space-sm)` |
 | `spacing.md` | 0.75rem | 12 | `var(--space-md)` |
 | `spacing.lg` | 1rem | 16 | `var(--space-lg)` |
+| `spacing.lgPlus` | 1.25rem | 20 | `var(--space-lg-plus)` |
 | `spacing.xl` | 1.5rem | 24 | `var(--space-xl)` |
 | `spacing.2xl` | 2rem | 32 | `var(--space-2xl)` |
+| `spacing.2xlWide` | 2.5rem | 40 | `var(--space-2xl-wide)` |
 | `spacing.3xl` | 3rem | 48 | `var(--space-3xl)` |
 
 **Dot notation in specs** may appear as `space.xs` — treat as `spacing.xs`.
@@ -40,11 +43,14 @@ Do not use a token meant for spacing on a property that does something else. See
 | Step | Typical use |
 |------|-------------|
 | **xs** | Label-to-control gap, tight vertical stacks, error row icon alignment. |
+| **xsPlus** | 6px label-to-input gap (Lenovo Zero-Floor). |
 | **sm** | Gaps inside controls (text ↔ icon), compact horizontal rhythm. |
 | **md** | Input horizontal padding (leading edge), medium gaps between related items. |
 | **lg** | Default spacing between form fields, comfortable button padding (with component spec). |
+| **lgPlus** | Default card internal padding / 20px rhythm (Lenovo Zero-Floor). |
 | **xl** | Section padding, larger gaps between groups. |
 | **2xl** | Separation between blocks inside a region. |
+| **2xlWide** | 40px section padding desktop (Lenovo Zero-Floor). |
 | **3xl** | Major section spacing; aligns with dashboard-scale rhythm. |
 
 **Page-level layout** (gutters, grid gaps) may combine these steps; see `design-system/pages/dashboard.md` (`spacing_scale` reference) and the relevant page spec.

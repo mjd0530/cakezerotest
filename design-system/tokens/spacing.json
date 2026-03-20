@@ -7,6 +7,11 @@
       "type": "dimension",
       "description": "4px — Tight stacks (e.g. label to control), dense gaps."
     },
+    "xsPlus": {
+      "value": "0.375rem",
+      "type": "dimension",
+      "description": "6px — Label-to-input gap (Lenovo Zero-Floor); between xs and sm."
+    },
     "sm": {
       "value": "0.5rem",
       "type": "dimension",
@@ -22,6 +27,11 @@
       "type": "dimension",
       "description": "16px — Default field spacing, button internal padding references."
     },
+    "lgPlus": {
+      "value": "1.25rem",
+      "type": "dimension",
+      "description": "20px — Default card internal padding (Lenovo Zero-Floor gap-5); between lg and xl."
+    },
     "xl": {
       "value": "1.5rem",
       "type": "dimension",
@@ -31,6 +41,11 @@
       "value": "2rem",
       "type": "dimension",
       "description": "32px — Block separation within a page region."
+    },
+    "2xlWide": {
+      "value": "2.5rem",
+      "type": "dimension",
+      "description": "40px — Section padding desktop (Lenovo Zero-Floor gap-10); between 2xl and 3xl."
     },
     "3xl": {
       "value": "3rem",

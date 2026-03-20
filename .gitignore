@@ -15,6 +15,14 @@ Thumbs.db
 .env.*
 !.env.example
 
-# Optional local / generated (uncomment if you add these)
-# node_modules/
+# Node / frontend (Storybook app)
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+storybook-static/
+**/storybook-static/
+*.log
+debug-storybook.log
+
 # .cursor/projects/

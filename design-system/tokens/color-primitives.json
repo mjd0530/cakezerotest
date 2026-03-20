@@ -1,6 +1,6 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
-  "description": "Core color primitives extracted from Figma. Palette scales (50–900) and common white/black only. Use for theming, semantic token derivation, and contrast checks. Semantic tokens (text/*, surface/*, border/*, brand/*) are defined in Figma and reference these primitives.",
+  "description": "Core color primitives extracted from Figma, plus namespaced Lenovo Zero-Floor brand palettes (not from default Figma extract). Palette scales (50–900) and common white/black. Use for theming, semantic token derivation, and contrast checks.",
   "primitive": {
     "common": {
       "white": { "value": "#FFFFFF", "type": "color" },
@@ -269,6 +269,50 @@
       "700": { "value": "#BE123C", "type": "color" },
       "800": { "value": "#9F1239", "type": "color" },
       "900": { "value": "#881337", "type": "color" }
+    },
+    "lenovo": {
+      "primary": {
+        "50": { "value": "#F1E1ED", "type": "color" },
+        "100": { "value": "#D9C1D8", "type": "color" },
+        "200": { "value": "#BFA0BC", "type": "color" },
+        "300": { "value": "#A47EA0", "type": "color" },
+        "400": { "value": "#8A5C86", "type": "color" },
+        "500": { "value": "#733A6C", "type": "color" },
+        "600": { "value": "#7A126B", "type": "color" },
+        "700": { "value": "#60105A", "type": "color" },
+        "800": { "value": "#4D144A", "type": "color" },
+        "900": { "value": "#361035", "type": "color" },
+        "950": { "value": "#1E0013", "type": "color" }
+      },
+      "secondary": {
+        "50": { "value": "#EAEEF5", "type": "color" },
+        "100": { "value": "#C9D0F0", "type": "color" },
+        "600": { "value": "#294E95", "type": "color" },
+        "900": { "value": "#11184F", "type": "color" }
+      },
+      "neutral": {
+        "0": { "value": "#FFFFFF", "type": "color" },
+        "50": { "value": "#F5F3F5", "type": "color" },
+        "100": { "value": "#E6E2E4", "type": "color" },
+        "200": { "value": "#CCC8CE", "type": "color" },
+        "300": { "value": "#ABA8B1", "type": "color" },
+        "400": { "value": "#8E8A95", "type": "color" },
+        "500": { "value": "#716C79", "type": "color" },
+        "600": { "value": "#4E444E", "type": "color" },
+        "700": { "value": "#3C3340", "type": "color" },
+        "800": { "value": "#2C2332", "type": "color" },
+        "900": { "value": "#1E0013", "type": "color" },
+        "950": { "value": "#0F0009", "type": "color" }
+      },
+      "accent": {
+        "50": { "value": "#FAECEB", "type": "color" },
+        "100": { "value": "#F0C7BF", "type": "color" },
+        "300": { "value": "#F26A52", "type": "color" },
+        "500": { "value": "#E1251B", "type": "color" },
+        "600": { "value": "#B8252E", "type": "color" },
+        "700": { "value": "#871C23", "type": "color" },
+        "800": { "value": "#64131E", "type": "color" }
+      }
     }
   }
 }
