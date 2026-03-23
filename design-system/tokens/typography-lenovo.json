@@ -1,19 +1,7 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
-  "description": "Lenovo Zero-Floor typography overlay. Use with [data-theme=\"lenovo\"] or Lenovo-branded products only — do not replace design-system/tokens/typography.json globally. Allowed font weights: 400, 500, 700 only (no 600). Map display/heading/body roles to typography.json fontSize/lineHeight where sizes align; use these stacks and weight rules for Lenovo.",
+  "description": "Lenovo Zero-Floor typography overlay: weight and role rules only. Font families are NOT defined here — always use typography.json (Rookery sans, Martian Mono). Use with [data-theme=\"lenovo\"] for color theme; do not replace typography.json globally.",
   "lenovoTypography": {
-    "fontFamily": {
-      "sans": {
-        "value": "'LenovoSans', 'Inter', ui-sans-serif, system-ui, sans-serif",
-        "type": "fontFamily",
-        "description": "Lenovo Zero-Floor sans stack. Load LenovoSans in app; Inter is fallback."
-      },
-      "mono": {
-        "value": "'JetBrains Mono', 'Fira Code', ui-monospace, monospace",
-        "type": "fontFamily",
-        "description": "Lenovo Zero-Floor monospace stack."
-      }
-    },
     "fontWeight": {
       "allowed": {
         "value": "400,500,700",

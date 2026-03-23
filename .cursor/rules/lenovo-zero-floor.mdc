@@ -12,7 +12,8 @@ This rule applies **only** when the task explicitly targets **Lenovo Zero-Floor*
 
 - [`design-system/tokens/lenovo-zero-floor.md`](design-system/tokens/lenovo-zero-floor.md) — brand rules, theme switching, CSS map
 - [`design-system/tokens/color-semantic-lenovo.json`](design-system/tokens/color-semantic-lenovo.json) — light semantics
-- [`design-system/tokens/typography-lenovo.json`](design-system/tokens/typography-lenovo.json) — font stacks; weights **400 / 500 / 700 only** (no `font-semibold` / 600)
+- [`design-system/tokens/typography.json`](design-system/tokens/typography.json) — font families (Rookery sans, Martian Mono)
+- [`design-system/tokens/typography-lenovo.json`](design-system/tokens/typography-lenovo.json) — Lenovo **weights only** (**400 / 500 / 700**; no `font-semibold` / 600) and role notes
 - [`AGENTS.md`](AGENTS.md) §2 — full document index
 
 ## Non-negotiables

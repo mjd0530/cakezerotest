@@ -16,7 +16,7 @@ AI- and developer-readable reference for the **Lenovo-branded** color and typogr
 | [`color-primitives.json`](color-primitives.json) → `primitive.lenovo.*` | Brand palettes (not from default Figma extract) |
 | [`color-semantic-lenovo.json`](color-semantic-lenovo.json) | Light semantic roles + extensions |
 | [`color-semantic-dark-lenovo.json`](color-semantic-dark-lenovo.json) | **Provisional** dark roles — audit before production |
-| [`typography-lenovo.json`](typography-lenovo.json) | Font stacks and weight rules |
+| [`typography-lenovo.json`](typography-lenovo.json) | Lenovo **weight** rules (400 / 500 / 700) and role notes — families from [`typography.json`](typography.json) only |
 
 Also read [`spacing.json`](spacing.json) for `spacing.xsPlus`, `spacing.lgPlus`, `spacing.2xlWide` (Lenovo rhythm).
 
@@ -56,8 +56,8 @@ Lenovo maps **success** to **secondary blue** (`semantic.success.*` → `lenovo.
 
 ### Typography
 
-- Stacks: see `typography-lenovo.json` (`LenovoSans`, `Inter`, …).
-- **Weights:** 400, 500, 700 only — **no 600** (`font-semibold`) on Lenovo-themed UI.
+- **Font stacks are not part of the Lenovo theme.** Use [`typography.json`](typography.json) for all families: **Rookery** (`fontFamily.sans`) and **Martian Mono** (`fontFamily.mono`), per [`design-system/policies/typography.md`](../policies/typography.md). `design-tokens-lenovo.css` does not override `--font-sans`.
+- **Lenovo-only:** see [`typography-lenovo.json`](typography-lenovo.json) for **weights** 400, 500, 700 only — **no 600** (`font-semibold`) on Lenovo-themed UI.
 - **Conflict:** [`design-system/components/button.md`](../components/button.md) defaults to weight **600** for labels; for Lenovo, use **500** (medium) — see § Lenovo theme in that spec.
 
 ### Icons

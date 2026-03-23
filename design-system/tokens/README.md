@@ -78,7 +78,7 @@ No dev server is required to use these files.
 
 ## typography-lenovo.json
 
-**Contents**: Lenovo font stacks (`LenovoSans`, `Inter`, …), allowed weights (400 / 500 / 700 only), role notes. Does **not** replace `typography.json` globally.  
+**Contents**: Lenovo **weight** rules (400 / 500 / 700 only) and role notes. Font families always come from **`typography.json`** (Rookery / Martian Mono). Does **not** replace `typography.json` globally.  
 **When to read**: Lenovo-themed typography or when avoiding weight 600 on Lenovo surfaces.
 
 ## spacing.json

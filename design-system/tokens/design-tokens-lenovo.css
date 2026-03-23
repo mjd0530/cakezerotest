@@ -1,6 +1,7 @@
 /**
  * Lenovo Zero-Floor theme — mirrors color-semantic-lenovo.json (same folder).
  * Activate with [data-theme="lenovo"] on a root ancestor (e.g. html or #root).
+ * Font families are unchanged: use typography.json / design-tokens.css --font-sans (Rookery).
  */
 [data-theme='lenovo'] {
   /* Lenovo primitive scales (reference — prefer semantic vars in components) */
@@ -109,7 +110,7 @@
   --color-danger-hover: var(--color-feedback-error-text);
   --color-danger-on: #ffffff;
 
-  --font-sans: 'LenovoSans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /* Lenovo does not override --font-sans; inherit from design-tokens.css / typography.json (Rookery). */
 
   --radius-xs: 0.125rem;
   --radius-sm: 0.25rem;

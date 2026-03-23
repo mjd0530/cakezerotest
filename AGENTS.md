@@ -92,7 +92,7 @@ Read the relevant file(s) before acting. Each entry lists **when to read it**.
 
 | `design-system/tokens/color-semantic-dark-lenovo.json` | **Lenovo** dark semantics (provisional — audit before production) |
 
-| `design-system/tokens/typography-lenovo.json` | **Lenovo** font stacks and weights (400 / 500 / 700 only) |
+| `design-system/tokens/typography-lenovo.json` | **Lenovo** weight rules (400 / 500 / 700); font families always from `typography.json` (Rookery) |
 
 | `design-system/tokens/spacing.json` | Any padding, margin, gap, or layout spacing value |
 
